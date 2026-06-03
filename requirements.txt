@@ -1,0 +1,3 @@
+# Add and pin dependencies as you go, e.g.:
+# pillow
+# numpy
