@@ -706,4 +706,69 @@ transcribe(image)
 
 ---
 
+## 18. Code Refactor
+
+This section records a round of code-cleanup changes that removed duplication
+and dead logic without altering the transcription pipeline's behaviour. The
+competition CER is unchanged (still **0.0221**) — these are maintainability
+fixes, not accuracy changes.
+
+### 18.1 — `transcribe()` reuses `_run_tesseract_with_preprocessing`
+
+**What changed.** `competition_transcriber.py` had inlined the
+"run Tesseract → if < 3 chars, preprocess and retry" logic directly inside
+`transcribe()`, duplicating the body of the existing
+`_run_tesseract_with_preprocessing` helper (which had become dead code as a
+result). `transcribe()` now calls the helper instead of re-implementing it.
+
+**Why.** Two copies of the same fallback logic is a maintenance hazard — a fix
+to one can silently drift from the other. The two copies had in fact already
+diverged slightly in how they treated a 1–2 character preprocessed result.
+
+**Behaviour-preserving.** Every branch was checked by hand (raw ≥ 3 chars,
+preprocessed ≥ 3, preprocessed 1–2 chars, preprocessed empty, no-wand,
+no-TrOCR) and returns the identical value to the previous inline version. The
+Tesseract-first inference order is unchanged.
+
+### 18.2 — `test_baseline.py` calls `transcribe()` once per image
+
+**What changed.** The evaluation loop used to run Tesseract twice for every
+image: once directly via `transcriber._run_tesseract(image)` to compute a
+"raw" (no-fallback) CER, and again via `transcriber.transcribe(image)` for the
+real result. It now calls `transcribe()` exactly once per image.
+
+**Why.** For the ~415 images that pass on the first Tesseract call, the second
+run was identical wasted work — it doubled the subprocess cost across the whole
+422-image dev set. The before/after "raw vs fallback" comparison columns and
+the per-image `IMPROVED/SAME/WORSE` tags that depended on the raw value were
+removed; the script still reports the overall CER, the 10 hardest images, and
+the current status of the 7 previously-blank images.
+
+### 18.3 — Merged `train.py` and `train_colab.py` into one `train.py`
+
+**What changed.** `train_colab.py` was a near-verbatim copy of `train.py`
+(identical `MalteseOCRDataset` and `run_epoch`); only the device, DataLoader
+settings, epoch count, and data paths differed. The two files are now a single
+`train.py` that auto-detects the device and selects the right settings:
+
+| Device | num_workers | pin_memory | epochs |
+|--------|-------------|------------|--------|
+| CUDA (e.g. Colab T4) | 2 | True | 5 |
+| MPS (Apple Silicon)  | 0 | False | 10 |
+| CPU (fallback)       | 0 | False | 10 |
+
+`num_workers=0` is kept for MPS/CPU because multiprocessing in the macOS
+DataLoader hangs. Data paths also auto-detect Colab: if a mounted Drive is
+present at `MyDrive/maltese-OCR/`, the script reads/writes there; otherwise it
+uses the local repo paths.
+
+**Why.** Two copies meant every shared bug fix had to be applied twice — the
+exact duplication hazard that had already bitten this project. One device-aware
+file removes that risk.
+
+**Follow-on edits.** `train_colab.py` was deleted, and `run_colab.ipynb` was
+updated to upload and run `train.py` instead of `train_colab.py`.
+
+---
+
 *Documentation last updated: June 2026* *Competition: ACM DocEng 2026 — Maltese OCR*  

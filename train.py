@@ -1,13 +1,26 @@
 """
 train.py — Fine-tune TrOCR on synthetic Maltese OCR training images.
 
+This single script runs on any backend; it auto-detects the compute device and
+picks safe per-device settings (formerly split across train.py / train_colab.py):
+
+  CUDA  (NVIDIA GPU, e.g. Colab T4) → num_workers=2, pin_memory=True, 5 epochs
+  MPS   (Apple Silicon GPU)         → num_workers=0,  pin_memory=False, 10 epochs
+  CPU   (fallback, slow)            → num_workers=0,  pin_memory=False, 10 epochs
+
+num_workers=0 is required on macOS — multiprocessing in DataLoader conflicts
+with the macOS process model and causes hangs; Linux/CUDA handles workers fine.
+
+Data paths auto-detect Google Colab: if a mounted Drive is present the script
+reads from / writes to MyDrive/maltese-OCR/, otherwise it uses local repo paths.
+
 What this script does, step by step:
-  1. Loads 5000 synthetic images + their ground-truth text from transcriptions.json
+  1. Loads synthetic images + ground-truth text from transcriptions.json
   2. Splits them 90% train / 10% validation
   3. Loads the pretrained TrOCR model from HuggingFace
-  4. Fine-tunes for 10 epochs on the MPS (Apple Silicon) GPU
+  4. Fine-tunes on the detected device
   5. After each epoch, evaluates on the validation split
-  6. Saves the best checkpoint (lowest val loss) to models/trocr-maltese/
+  6. Saves the best checkpoint (lowest val loss) to the model directory
 
 Run with:
     python3 train.py
@@ -25,21 +38,57 @@ from tqdm import tqdm
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 
 # ---------------------------------------------------------------------------
-# Configuration — change these if you want to experiment
+# Paths — auto-detect Google Colab (mounted Drive) vs a local checkout
 # ---------------------------------------------------------------------------
 
-IMAGES_DIR     = Path("data/synthetic/images")
-TRANSCRIPTIONS = Path("data/synthetic/transcriptions.json")
-SAVE_DIR       = Path("models/trocr-maltese")
+_COLAB_ROOT = Path("/content/drive/MyDrive/maltese-OCR")
+
+if (_COLAB_ROOT / "synthetic").exists():
+    # Running on Colab with Drive mounted at MyDrive/maltese-OCR/
+    IMAGES_DIR     = _COLAB_ROOT / "synthetic" / "images"
+    TRANSCRIPTIONS = _COLAB_ROOT / "synthetic" / "transcriptions.json"
+    SAVE_DIR       = _COLAB_ROOT / "models" / "trocr-maltese"
+else:
+    # Running from a local repo checkout
+    IMAGES_DIR     = Path("data/synthetic/images")
+    TRANSCRIPTIONS = Path("data/synthetic/transcriptions.json")
+    SAVE_DIR       = Path("models/trocr-maltese")
 
 PRETRAINED_MODEL = "microsoft/trocr-base-handwritten"
 
-NUM_EPOCHS     = 10
 BATCH_SIZE     = 8
 LEARNING_RATE  = 5e-5
 VAL_SPLIT      = 0.10    # fraction of data held out for validation
 MAX_TARGET_LEN = 256     # token sequences longer than this are truncated
 RANDOM_SEED    = 42
+
+
+# ---------------------------------------------------------------------------
+# Device + per-device settings
+# ---------------------------------------------------------------------------
+
+def select_device() -> tuple[torch.device, dict]:
+    """
+    Pick the best available compute device and the DataLoader / epoch settings
+    that suit it.  Returns (device, config) where config has keys:
+      num_workers, pin_memory, num_epochs.
+    """
+    if torch.cuda.is_available():
+        device = torch.device("cuda")
+        print(f"Using CUDA — {torch.cuda.get_device_name(0)}")
+        # Linux/CUDA handles DataLoader workers and pinned memory well.
+        config = {"num_workers": 2, "pin_memory": True, "num_epochs": 5}
+    elif torch.backends.mps.is_available():
+        device = torch.device("mps")
+        print("Using MPS (Apple Silicon GPU)")
+        # num_workers must be 0 on macOS to avoid DataLoader hangs.
+        config = {"num_workers": 0, "pin_memory": False, "num_epochs": 10}
+    else:
+        device = torch.device("cpu")
+        print("No GPU available — using CPU (this will be slow)")
+        config = {"num_workers": 0, "pin_memory": False, "num_epochs": 10}
+
+    return device, config
 
 
 # ---------------------------------------------------------------------------
@@ -154,14 +203,12 @@ def main() -> None:
     torch.manual_seed(RANDOM_SEED)
 
     # ------------------------------------------------------------------
-    # Choose compute device
+    # Choose compute device and per-device settings
     # ------------------------------------------------------------------
-    if torch.backends.mps.is_available():
-        device = torch.device("mps")
-        print("Using MPS (Apple Silicon GPU)")
-    else:
-        device = torch.device("cpu")
-        print("MPS not available — using CPU (will be slow)")
+    device, cfg = select_device()
+    num_workers = cfg["num_workers"]
+    pin_memory  = cfg["pin_memory"]
+    num_epochs  = cfg["num_epochs"]
 
     # ------------------------------------------------------------------
     # Load transcriptions and build file lists
@@ -217,13 +264,13 @@ def main() -> None:
 
     print(f"\nSplit: {train_size} train / {val_size} validation")
 
-    # num_workers=0 is required on macOS — multiprocessing in DataLoader
-    # conflicts with the macOS process model and causes hangs
     train_loader = DataLoader(
-        train_dataset, batch_size=BATCH_SIZE, shuffle=True,  num_workers=0
+        train_dataset, batch_size=BATCH_SIZE, shuffle=True,
+        num_workers=num_workers, pin_memory=pin_memory,
     )
     val_loader = DataLoader(
-        val_dataset,   batch_size=BATCH_SIZE, shuffle=False, num_workers=0
+        val_dataset, batch_size=BATCH_SIZE, shuffle=False,
+        num_workers=num_workers, pin_memory=pin_memory,
     )
 
     # ------------------------------------------------------------------
@@ -238,21 +285,21 @@ def main() -> None:
     best_val_loss = float("inf")
 
     print(
-        f"\nTraining for {NUM_EPOCHS} epochs "
+        f"\nTraining for {num_epochs} epochs "
         f"(batch_size={BATCH_SIZE}, lr={LEARNING_RATE})…\n"
     )
 
-    for epoch in range(1, NUM_EPOCHS + 1):
+    for epoch in range(1, num_epochs + 1):
 
         train_loss = run_epoch(
             model, train_loader, device,
             optimizer=optimizer,
-            desc=f"Epoch {epoch}/{NUM_EPOCHS} train",
+            desc=f"Epoch {epoch}/{num_epochs} train",
         )
         val_loss = run_epoch(
             model, val_loader, device,
             optimizer=None,
-            desc=f"Epoch {epoch}/{NUM_EPOCHS} val  ",
+            desc=f"Epoch {epoch}/{num_epochs} val  ",
         )
 
         # Save a checkpoint whenever validation loss improves
@@ -263,7 +310,7 @@ def main() -> None:
             processor.save_pretrained(SAVE_DIR)
 
         print(
-            f"Epoch {epoch:2d}/{NUM_EPOCHS} — "
+            f"Epoch {epoch:2d}/{num_epochs} — "
             f"train_loss: {train_loss:.4f}  "
             f"val_loss: {val_loss:.4f}"
             + ("  ✓ best checkpoint saved" if saved else "")

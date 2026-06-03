@@ -3,8 +3,11 @@
 # Outputs:
 #   - Per-image CER printed to stdout
 #   - results.json sorted by CER descending
-#   - Summary: overall CER, side-by-side before/after comparison for images
-#     that previously returned empty output (helped by preprocessing fallback)
+#   - Summary: overall CER and the status of images that previously returned
+#     empty output (now recovered by the preprocessing / TrOCR fallback path)
+#
+# Each image is transcribed exactly once via CompetitionTranscriber.transcribe(),
+# which is the real competition path (Tesseract PSM 6 + ImageMagick fallback).
 
 import json
 import os
@@ -14,7 +17,7 @@ import jiwer
 from competition_transcriber import CompetitionTranscriber
 
 # Images that returned empty string under the old config (Tesseract PSM 3,
-# no preprocessing).  Kept here so we can show targeted before/after output.
+# no preprocessing).  Kept here so we can report their current status.
 _PREVIOUSLY_BLANK = {
     "054.jpg", "067.jpg", "096.jpg", "102.jpg",
     "106.jpg", "165.jpg", "214.jpg",
@@ -29,9 +32,8 @@ def main():
     print()
 
     results       = []
-    raw_cers      = []   # Tesseract PSM 6 with NO preprocessing fallback
-    final_cers    = []   # Tesseract PSM 6 WITH preprocessing fallback (transcribe)
-    blank_details = []   # side-by-side for the 7 previously-blank images
+    cers          = []   # CER of the real transcribe() path, per image
+    blank_details = []   # current status of the 7 previously-blank images
 
     for entry in entries:
         filename   = entry["image"]
@@ -40,43 +42,30 @@ def main():
 
         image = PIL.Image.open(image_path)
 
-        # --- without preprocessing fallback ---
-        raw = (
-            transcriber._run_tesseract(image)
-            if transcriber._has_tesseract
-            else ""
-        )
-
-        # --- with preprocessing fallback (the real transcribe path) ---
-        final = transcriber.transcribe(image)
-
-        cer_raw   = jiwer.cer(expected, raw)
-        cer_final = jiwer.cer(expected, final)
-
-        raw_cers.append(cer_raw)
-        final_cers.append(cer_final)
+        # The real competition path: Tesseract PSM 6 + ImageMagick fallback.
+        predicted = transcriber.transcribe(image)
+        cer = jiwer.cer(expected, predicted)
+        cers.append(cer)
 
         results.append({
             "image":     filename,
-            "predicted": final,
+            "predicted": predicted,
             "expected":  expected,
-            "cer":       cer_final,
+            "cer":       cer,
         })
 
         if filename in _PREVIOUSLY_BLANK:
             blank_details.append({
-                "image":    filename,
-                "expected": expected,
-                "raw":      raw,
-                "final":    final,
-                "cer_raw":  cer_raw,
-                "cer_final":cer_final,
+                "image":     filename,
+                "expected":  expected,
+                "predicted": predicted,
+                "cer":       cer,
             })
 
         print(f"=== {filename} ===")
-        print(f"PREDICTED: {final}")
+        print(f"PREDICTED: {predicted}")
         print(f"EXPECTED:  {expected}")
-        print(f"CER: {cer_final:.3f}")
+        print(f"CER: {cer:.3f}")
         print()
 
     if not results:
@@ -96,32 +85,24 @@ def main():
         print(f"  EXPECTED:  {r['expected']}")
         print()
 
-    # --- CER summary: before vs after preprocessing fallback ---
-    avg_raw   = sum(raw_cers)   / len(raw_cers)
-    avg_final = sum(final_cers) / len(final_cers)
-
+    # --- Overall CER ---
+    avg_cer = sum(cers) / len(cers)
     print("=" * 60)
     print("CER SUMMARY")
     print("=" * 60)
-    print(f"  Without preprocessing fallback : {avg_raw:.4f}")
-    print(f"  With    preprocessing fallback : {avg_final:.4f}")
-    delta = avg_raw - avg_final
-    print(f"  Improvement                    : {delta:+.4f}")
+    print(f"  Overall CER ({len(cers)} images): {avg_cer:.4f}")
     print()
 
-    # --- Previously-blank image comparison ---
-    now_non_blank = sum(1 for d in blank_details if len(d["final"]) >= 3)
+    # --- Previously-blank image status ---
+    now_non_blank = sum(1 for d in blank_details if len(d["predicted"]) >= 3)
     print("=" * 60)
-    print(f"PREVIOUSLY BLANK IMAGES (7 images that returned '' under PSM 3)")
+    print("PREVIOUSLY BLANK IMAGES (7 images that returned '' under PSM 3)")
     print(f"  Now have predictions: {now_non_blank} / {len(blank_details)}")
     print("=" * 60)
     for d in blank_details:
-        tag = "IMPROVED" if d["cer_final"] < d["cer_raw"] else (
-              "SAME"     if d["cer_final"] == d["cer_raw"] else "WORSE")
-        print(f"\n  {d['image']}  [{tag}]")
-        print(f"    EXPECTED : {d['expected']}")
-        print(f"    RAW      : {d['raw'] or '(empty)'}  (CER {d['cer_raw']:.3f})")
-        print(f"    FINAL    : {d['final'] or '(empty)'}  (CER {d['cer_final']:.3f})")
+        print(f"\n  {d['image']}  (CER {d['cer']:.3f})")
+        print(f"    EXPECTED  : {d['expected']}")
+        print(f"    PREDICTED : {d['predicted'] or '(empty)'}")
     print()
 
 
