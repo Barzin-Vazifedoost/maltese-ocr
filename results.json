@@ -42,27 +42,9 @@
     "cer": 0.3181818181818182
   },
   {
-    "image": "154.jpg",
-    "predicted": "1-Ippjanata",
-    "expected": "1 — Ippjanata",
-    "cer": 0.23076923076923078
-  },
-  {
     "image": "175.jpg",
     "predicted": "Ti; p ta' għerq",
     "expected": "Tip ta’ għerq",
-    "cer": 0.23076923076923078
-  },
-  {
-    "image": "236.jpg",
-    "predicted": "1-Ippjanata",
-    "expected": "1 — Ippjanata",
-    "cer": 0.23076923076923078
-  },
-  {
-    "image": "354.jpg",
-    "predicted": "1-Ippjanata",
-    "expected": "1 — Ippjanata",
     "cer": 0.23076923076923078
   },
   {
@@ -100,24 +82,6 @@
     "predicted": "Il-promozzjoni tal-iskambju tal-għarfien u l-kisba ta' kompetenzi inklużivi permezz tal-kooperazzjoni",
     "expected": "Il-promozzjoni tal-iskambju tal-għarfien u l-kisba ta’ kompetenzi inklużivi permezz tal-kooperazzjoni u n-networking",
     "cer": 0.13793103448275862
-  },
-  {
-    "image": "166.jpg",
-    "predicted": "2-Parzjalment fis-seħħ",
-    "expected": "2 — Parzjalment fis-seħħ",
-    "cer": 0.125
-  },
-  {
-    "image": "207.jpg",
-    "predicted": "2-Parzjalment fis-seħħ",
-    "expected": "2 — Parzjalment fis-seħħ",
-    "cer": 0.125
-  },
-  {
-    "image": "337.jpg",
-    "predicted": "2-Parzjalment fis-seħħ",
-    "expected": "2 — Parzjalment fis-seħħ",
-    "cer": 0.125
   },
   {
     "image": "205.jpg",
@@ -1632,6 +1596,12 @@
     "cer": 0.0
   },
   {
+    "image": "154.jpg",
+    "predicted": "1 — Ippjanata",
+    "expected": "1 — Ippjanata",
+    "cer": 0.0
+  },
+  {
     "image": "157.jpg",
     "predicted": "(1) L-ewwel Gwerra Dinjija kellu effett fuq l-edukazzjoni Maltija.",
     "expected": "(1) L-ewwel Gwerra Dinjija kellu effett fuq l-edukazzjoni Maltija.",
@@ -1659,6 +1629,12 @@
     "image": "164.jpg",
     "predicted": "Paġna minn Vox Depicta",
     "expected": "Paġna minn Vox Depicta",
+    "cer": 0.0
+  },
+  {
+    "image": "166.jpg",
+    "predicted": "2 — Parzjalment fis-seħħ",
+    "expected": "2 — Parzjalment fis-seħħ",
     "cer": 0.0
   },
   {
@@ -1794,6 +1770,12 @@
     "cer": 0.0
   },
   {
+    "image": "207.jpg",
+    "predicted": "2 — Parzjalment fis-seħħ",
+    "expected": "2 — Parzjalment fis-seħħ",
+    "cer": 0.0
+  },
+  {
     "image": "210.jpg",
     "predicted": "Cor J. W. Meijer",
     "expected": "Cor J. W. Meijer",
@@ -1881,6 +1863,12 @@
     "image": "235.jpg",
     "predicted": "materjal solidu persistenti, manifatturat jew proċessat li jiġi skartat jew jintrema fil-baħar jew fil-kosta",
     "expected": "materjal solidu persistenti, manifatturat jew proċessat li jiġi skartat jew jintrema fil-baħar jew fil-kosta",
+    "cer": 0.0
+  },
+  {
+    "image": "236.jpg",
+    "predicted": "1 — Ippjanata",
+    "expected": "1 — Ippjanata",
     "cer": 0.0
   },
   {
@@ -2250,6 +2238,12 @@
     "cer": 0.0
   },
   {
+    "image": "337.jpg",
+    "predicted": "2 — Parzjalment fis-seħħ",
+    "expected": "2 — Parzjalment fis-seħħ",
+    "cer": 0.0
+  },
+  {
     "image": "338.jpg",
     "predicted": "Enduring Voices', National Geographic (proġett) 10(20)",
     "expected": "Enduring Voices', National Geographic (proġett) 10(20)",
@@ -2307,6 +2301,12 @@
     "image": "352.jpg",
     "predicted": "kellhu (kellu)",
     "expected": "kellhu (kellu)",
+    "cer": 0.0
+  },
+  {
+    "image": "354.jpg",
+    "predicted": "1 — Ippjanata",
+    "expected": "1 — Ippjanata",
     "cer": 0.0
   },
   {
