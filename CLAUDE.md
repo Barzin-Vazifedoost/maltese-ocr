@@ -13,8 +13,7 @@ maltese-ocr/
 ├── competition_transcriber.py   # Primary OCR class used for scoring
 ├── test_baseline.py             # Evaluates transcriber on dev set, produces results.json
 ├── generate_data.py             # Generates 5000 synthetic training images from real Maltese text
-├── train.py                     # Fine-tunes TrOCR locally on Apple Silicon (MPS)
-├── train_colab.py               # Fine-tunes TrOCR on Google Colab (CUDA / T4)
+├── train.py                     # Fine-tunes TrOCR — auto-detects CUDA / MPS / CPU
 ├── run_colab.ipynb              # 4-cell Colab notebook (mount Drive, pip, check GPU, run train)
 ├── transcribe.py                # Stub for final competition submission
 ├── requirements.txt             # Python dependencies
@@ -90,29 +89,36 @@ maltese-ocr/
 ### Model
 `microsoft/trocr-base-handwritten` — a Vision Encoder–Decoder transformer.
 
-### Mac version (`train.py`)
-- Device: MPS (Apple Silicon GPU)
-- `num_workers=0` — required on macOS (multiprocessing in DataLoader hangs otherwise)
-- 10 epochs, batch size 8, learning rate 5e-5
-- Saves best checkpoint (lowest val loss) to `models/trocr-maltese/`
-- **Problem**: MPS is ~18× slower than a T4 GPU; estimated 15–18 hours per run.
-- Mac training was abandoned in favour of Colab.
+### Training script (`train.py`) — single file, auto-detects the device
+`train.py` was originally split into a Mac version (`train.py`) and a Colab
+version (`train_colab.py`); these were near-identical copies that had to be
+kept in sync by hand. They were merged into one `train.py` (Section 18 in
+`documentation.md`) that picks the device and matching settings at runtime via
+a `select_device()` helper:
+
+| Device | `num_workers` | `pin_memory` | Epochs | Notes |
+|--------|---------------|--------------|--------|-------|
+| CUDA (NVIDIA T4, e.g. Colab) | 2 | True | 5 | T4 is fast; each epoch ~25–35 min |
+| MPS (Apple Silicon GPU)      | 0 | False | 10 | `num_workers=0` required on macOS (DataLoader hangs otherwise) |
+| CPU (fallback)               | 0 | False | 10 | Slow |
+
+Common to all: batch size 8, learning rate 5e-5, saves the best checkpoint
+(lowest val loss) to the model directory. Data/save paths auto-detect Colab:
+if a mounted Drive exists at `/content/drive/MyDrive/maltese-OCR/`, it reads/
+writes there; otherwise it uses the local repo paths (`data/synthetic/`,
+`models/trocr-maltese/`).
+
+- **Mac note**: MPS is ~18× slower than a T4; a full MPS run was estimated at
+  15–18 hours, so training was done on Colab instead.
 
 **Important bug**: `train.py` calls `SAVE_DIR.mkdir()` at the start of the training loop (before any epoch completes). So the directory `models/trocr-maltese/` can exist but be empty. `competition_transcriber.py` was updated to check for actual model files (`config.json`, `pytorch_model.bin`, or `model.safetensors`) rather than just directory existence — otherwise it would crash with an `OSError` trying to load from an empty directory.
-
-### Colab version (`train_colab.py`)
-- Device: CUDA (NVIDIA T4)
-- `num_workers=2`, `pin_memory=True` — safe on Linux, faster data loading
-- 5 epochs (T4 is fast; each epoch ~25–35 min)
-- Data paths: `/content/drive/MyDrive/maltese-OCR/synthetic/`
-- Save path: `/content/drive/MyDrive/maltese-OCR/models/trocr-maltese/`
 
 ### Colab notebook (`run_colab.ipynb`)
 4 cells:
 1. Mount Google Drive
 2. `pip install torch transformers pillow datasets malti tqdm jiwer`
 3. Check CUDA availability
-4. `!python train_colab.py`
+4. `!python train.py`
 
 **Training was completed on Colab**. The resulting checkpoint was downloaded from Google Drive and placed in `models/trocr-maltese/` locally.
 
@@ -193,15 +199,17 @@ python3 generate_data.py
 # Produces data/synthetic/images/ (5000 jpg) and data/synthetic/transcriptions.json
 ```
 
-### Fine-tune on Mac (slow)
+### Fine-tune locally (Mac MPS / CPU — slow)
 ```bash
 python3 train.py
+# Auto-detects MPS or CPU and uses local paths (data/synthetic/, models/trocr-maltese/).
 ```
 
 ### Fine-tune on Colab (recommended)
 1. Upload `data/synthetic/` to `MyDrive/maltese-OCR/synthetic/` on Google Drive.
-2. Upload `train_colab.py` to your Colab session.
+2. Upload `train.py` to your Colab session.
 3. Open `run_colab.ipynb` in Colab and run all cells.
+   `train.py` auto-detects the CUDA GPU and the mounted Drive paths.
 4. Download `MyDrive/maltese-OCR/models/trocr-maltese/` to `models/trocr-maltese/` locally.
 
 ### Evaluate fine-tuned model
@@ -221,8 +229,8 @@ python3 test_baseline.py
 | Current best CER | **0.0221** |
 | Organizers' reference CER | 0.023 |
 | Synthetic training images | 5000 |
-| TrOCR fine-tune epochs (Colab) | 5 |
-| TrOCR fine-tune epochs (Mac) | 10 (abandoned) |
+| TrOCR fine-tune epochs (CUDA/Colab) | 5 |
+| TrOCR fine-tune epochs (MPS/CPU) | 10 |
 | Train/val split | 90% / 10% |
 | Batch size | 8 |
 | Learning rate | 5e-5 |
