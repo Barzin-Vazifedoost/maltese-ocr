@@ -771,4 +771,77 @@ updated to upload and run `train.py` instead of `train_colab.py`.
 
 ---
 
+## 19. Targeted Post-processing Fix
+
+(Numbered 19 because `## 18` above is already the Code Refactor section.)
+
+A single targeted regex was added to `competition_transcriber._postprocess`,
+applied to the Tesseract result inside `_run_tesseract_with_preprocessing` (and
+therefore to every value returned by `transcribe()`):
+
+```python
+# digit-hyphen-Capital (no surrounding spaces) → digit em-dash Capital
+text = re.sub(r'(\d)-([A-ZĄĦĊĠŻ])', r'\1 — \2', text)
+```
+
+### Motivation
+
+Three dev-set images (`154.jpg`, `236.jpg`, `354.jpg`) shared the identical
+error: Tesseract read the heading `1 — Ippjanata` as `1-Ippjanata` (a tight
+hyphen instead of a spaced em dash). The same misread appears as `2-Parzjalment`
+on three more images (`166.jpg`, `207.jpg`, `337.jpg`).
+
+### Note on the pattern — why "no surrounding spaces"
+
+The fix was first prototyped as `(\d)\s*-\s*([A-ZĄĦĊĠŻ])` (allowing spaces
+around the hyphen). That version regressed **`121.jpg`** (CER 0.007 → 0.009):
+its prediction contains `...Malti2 - Għaliex`, where the hyphen is a genuine
+hyphen in the ground truth, and the `\s*` form rewrote it to an em dash. The
+target misreads are always *tight* (`1-Ippjanata`, no spaces), so requiring the
+hyphen to sit directly between the digit and the capital — `(\d)-([A-Z…])` —
+fixes all six target images and leaves the spaced, legitimate hyphen in
+`121.jpg` alone. This mirrors the earlier finding (Section 5/Round 2) that a
+broad digit→em-dash rule made 12 images worse; the rule must stay narrow.
+
+The pattern intentionally does **not** match:
+`978-87-92387-68-4` (ISBN), `14(1,13-15)` (page range), `DK-5000` (letter
+before the hyphen) — confirmed unchanged.
+
+### Results
+
+Evaluated by applying the shipping regex to the predictions in `results.json`
+(the 0.0221 run) and recomputing CER with `jiwer` — equivalent to re-running
+`test_baseline.py`.
+
+| Metric | Before | After |
+|--------|--------|-------|
+| Overall CER (422 images) | 0.0221 | **0.0196** (−0.00253) |
+| Images changed | — | 6 |
+| Improved | — | 6 |
+| Regressions | — | 0 |
+
+Per-image before/after (all six changed images):
+
+| Image | Prediction (before → after) | CER before | CER after |
+|-------|-----------------------------|-----------:|----------:|
+| 154.jpg | `1-Ippjanata` → `1 — Ippjanata` | 0.231 | **0.000** |
+| 236.jpg | `1-Ippjanata` → `1 — Ippjanata` | 0.231 | **0.000** |
+| 354.jpg | `1-Ippjanata` → `1 — Ippjanata` | 0.231 | **0.000** |
+| 166.jpg | `2-Parzjalment fis-seħħ` → `2 — Parzjalment fis-seħħ` | 0.125 | **0.000** |
+| 207.jpg | `2-Parzjalment fis-seħħ` → `2 — Parzjalment fis-seħħ` | 0.125 | **0.000** |
+| 337.jpg | `2-Parzjalment fis-seħħ` → `2 — Parzjalment fis-seħħ` | 0.125 | **0.000** |
+
+The three explicitly targeted images (`154`, `236`, `354`) all reached CER
+0.000; three further images with the same misread improved as a bonus; no other
+image changed.
+
+### CER progression (updated)
+
+| Stage | CER |
+|-------|-----|
+| Tesseract PSM 6 + ImageMagick fallback (3× upscale) | 0.0221 |
+| + digit-hyphen-Capital → em-dash post-processing | **0.0196** |
+
+---
+
 *Documentation last updated: June 2026* *Competition: ACM DocEng 2026 — Maltese OCR*  

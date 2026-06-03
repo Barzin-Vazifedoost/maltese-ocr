@@ -16,6 +16,7 @@
 
 import io
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -197,21 +198,41 @@ class CompetitionTranscriber:
 
             return PIL.Image.open(io.BytesIO(wimg.make_blob("PNG")))
 
+    @staticmethod
+    def _postprocess(text: str) -> str:
+        """
+        Targeted post-processing fix applied to the Tesseract result.
+
+        Fix: digit-hyphen-Capital (no surrounding spaces) → digit em-dash Capital
+          e.g. "1-Ippjanata" → "1 — Ippjanata"   (also "2-Parzjalment" → "2 — …")
+
+        The hyphen must be tight against both characters. Requiring no spaces is
+        what keeps this safe: it matches the tight "1-Ippjanata" misread but NOT
+        a spaced "Malti2 - Għaliex", where the hyphen is a real one in the ground
+        truth (rewriting that to an em dash regresses 121.jpg).
+
+        Only this specific pattern is applied — broad replacements hurt other
+        images (a general digit→em-dash rule was tried before and made 12 images
+        worse, because Maltese texts use real hyphens in page ranges and ISBNs).
+        """
+        return re.sub(r'(\d)-([A-ZĄĦĊĠŻ])', r'\1 — \2', text)
+
     def _run_tesseract_with_preprocessing(self, image: PIL.Image.Image) -> str:
         """
         Run Tesseract; if the result is empty or < 3 chars, apply
         ImageMagick preprocessing and retry.  Returns whichever result
         is non-empty (raw result takes priority if it has ≥ 3 chars).
+        The targeted post-processing fix is applied to the chosen result.
         """
         text = self._run_tesseract(image)
         if len(text) >= 3:
-            return text
+            return self._postprocess(text)
 
         if not self._has_wand:
-            return text
+            return self._postprocess(text)
 
         text_pp = self._run_tesseract(self._apply_preprocessing(image))
-        return text_pp if text_pp else text
+        return self._postprocess(text_pp if text_pp else text)
 
     # ------------------------------------------------------------------
     # Public API
