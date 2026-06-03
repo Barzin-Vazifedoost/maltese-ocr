@@ -6,12 +6,6 @@
     "cer": 0.5263157894736842
   },
   {
-    "image": "102.jpg",
-    "predicted": "ika iii i ii ge al g, Il-provvista ta' tagħlim. professjonali kontinwu dwar We linklużjoni fumz-T",
-    "expected": "Il-provvista ta’ tagħlim professjonali kontinwu dwar l inklużjoni",
-    "cer": 0.5230769230769231
-  },
-  {
     "image": "112.jpg",
     "predicted": "f. MMM.L 9 SODDA SUFAN...",
     "expected": "MMMM... SODDA SUFAN",
@@ -28,6 +22,12 @@
     "predicted": "f NAĦĠEB TRIDN TGĦID...L ARINĠA N. LUMIJA7P. 4",
     "expected": "NAĦSEB TRID TGĦID...LARINĠA LUMIJA?",
     "cer": 0.37142857142857144
+  },
+  {
+    "image": "102.jpg",
+    "predicted": "aq A) il-provvista ta' tagħlim q professjonali kontinwu dwar",
+    "expected": "Il-provvista ta’ tagħlim professjonali kontinwu dwar l inklużjoni",
+    "cer": 0.35384615384615387
   },
   {
     "image": "277.jpg",

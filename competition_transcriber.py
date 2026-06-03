@@ -1,12 +1,18 @@
 # competition_transcriber.py — OCR transcriber for the Maltese text competition.
 #
-# Inference order:
-#   1. Fine-tuned TrOCR model  (loaded from models/trocr-maltese/ if present)
-#   2. Tesseract fallback       (used when TrOCR returns empty text, or if the
-#                                fine-tuned model has not been trained yet)
-#      - First tries the raw image with Tesseract (PSM 6)
-#      - If the result is empty or < 3 chars, applies ImageMagick preprocessing
-#        and retries (handles coloured backgrounds, decorative fonts, tiny images)
+# Inference order (as of Phase 5 / Section 17 refactor):
+#   1. Tesseract (PSM 6)        — our best-performing model, CER 0.0221
+#      - If Tesseract returns < 3 characters, apply ImageMagick preprocessing
+#        (upscale, grayscale, contrast, adaptive threshold) and retry.
+#   2. TrOCR fallback           — used ONLY when Tesseract returns < 3 chars
+#                                  even after preprocessing, AND a fine-tuned
+#                                  model exists at models/trocr-maltese/.
+#
+# Why Tesseract first?
+#   During evaluation Tesseract (PSM 6) achieved CER 0.0221, which is better
+#   than our 5-epoch TrOCR fine-tune.  TrOCR also suffered from repetition
+#   loops on some images.  Using TrOCR only as a last-resort fallback keeps
+#   the high-quality Tesseract output for almost all images.
 
 import io
 import os
@@ -24,7 +30,6 @@ os.environ.setdefault("MAGICK_HOME", "/opt/homebrew")
 
 # Path where train.py saves the fine-tuned model
 _TROCR_MODEL_DIR = Path("models/trocr-maltese")
-
 
 class CompetitionTranscriber:
 
@@ -108,7 +113,20 @@ class CompetitionTranscriber:
     # ------------------------------------------------------------------
 
     def _run_trocr(self, image: PIL.Image.Image) -> str:
-        """Run the fine-tuned TrOCR model and return the decoded text."""
+        """
+        Run the fine-tuned TrOCR model and return the decoded text.
+
+        repetition_penalty=2.0 :
+            Strongly penalises the model for repeating tokens it has already
+            generated.  Values > 1.0 make repetition less likely; 2.0 is a
+            firm penalty that fixes the looping behaviour seen in the 5-epoch
+            fine-tune (e.g. "tal-tal-tal-tal..." on noisy images).
+
+        no_repeat_ngram_size=3 :
+            Forbids the model from generating any 3-word sequence it has
+            already produced in the same output.  Works alongside
+            repetition_penalty as a hard block on repeated phrases.
+        """
         pixel_values = self._proc(
             image.convert("RGB"), return_tensors="pt"
         ).pixel_values.to(self._device)
@@ -117,8 +135,10 @@ class CompetitionTranscriber:
             generated_ids = self._trocr.generate(
                 pixel_values,
                 max_new_tokens=256,
-                num_beams=4,          # beam search — better accuracy than greedy
+                num_beams=4,               # beam search — better accuracy than greedy
                 early_stopping=True,
+                repetition_penalty=2.0,    # penalise repeated tokens (fixes loops)
+                no_repeat_ngram_size=3,    # hard-block any repeated 3-gram phrase
             )
 
         text = self._proc.batch_decode(
@@ -150,7 +170,7 @@ class CompetitionTranscriber:
         Apply ImageMagick preprocessing and return a new PIL image.
 
         Pipeline (applied only to images where raw Tesseract gets < 3 chars):
-          1. Upscale 2× if height < 150 px   — helps Tesseract on tiny images
+          1. Upscale 3× if height < 200 px   — helps Tesseract on tiny images
           2. Convert to grayscale             — removes colour-background confusion
           3. Enhance contrast by 150 %        — sharpens faint or low-contrast text
           4. Adaptive threshold (binarise)    — converts uneven backgrounds to white
@@ -161,8 +181,8 @@ class CompetitionTranscriber:
         image.save(buf, format="PNG")
 
         with WandImage(blob=buf.getvalue()) as wimg:
-            if wimg.height < 150:
-                wimg.resize(wimg.width * 2, wimg.height * 2)
+            if wimg.height < 200:
+                wimg.resize(wimg.width * 3, wimg.height * 3)
 
             wimg.transform_colorspace("gray")
 
@@ -199,18 +219,42 @@ class CompetitionTranscriber:
 
     def transcribe(self, image: PIL.Image.Image) -> str:
         """
-        Transcribe `image` to text.
+        Transcribe `image` to text and return the result as a plain string.
 
-        Tries TrOCR first.  If TrOCR is unavailable or returns empty text,
-        falls back to Tesseract (with ImageMagick preprocessing for images
-        where Tesseract alone returns too little text).
+        Inference order
+        ---------------
+        Step 1 — Tesseract (always tried first, because it achieves CER 0.0221).
+            • Run Tesseract with PSM 6 ("uniform block of text").
+            • If output is >= 3 characters, return it immediately — we are done.
+            • If output is < 3 characters, apply ImageMagick preprocessing
+              (upscale, grayscale, contrast, binarise) and retry Tesseract.
+            • If the preprocessed result is >= 3 chars, return it.
+
+        Step 2 — TrOCR (last-resort fallback).
+            • Only reached when BOTH raw and preprocessed Tesseract produced
+              fewer than 3 characters (very rare — ~7 images in the dev set).
+            • Requires the fine-tuned model at models/trocr-maltese/.
+            • Uses repetition_penalty + no_repeat_ngram_size to suppress loops.
         """
-        if self._trocr is not None:
-            text = self._run_trocr(image)
-            if text:
+        # ---- Step 1: Tesseract (+ ImageMagick preprocessing retry) ----
+        if self._has_tesseract:
+            # Runs raw Tesseract; if that yields < 3 chars it retries on a
+            # preprocessed image and returns the best non-empty result.
+            text = self._run_tesseract_with_preprocessing(image)
+            if len(text) >= 3:
+                # Tesseract produced a good result — return straight away.
                 return text
 
-        if self._has_tesseract:
-            return self._run_tesseract_with_preprocessing(image)
+            # Only 0-2 chars. If TrOCR can't help, return what we have
+            # (a 1-2 char string) rather than an empty string.
+            if self._trocr is None:
+                return text
 
+        # ---- Step 2: TrOCR fallback (only if Tesseract failed / unavailable) ----
+        if self._trocr is not None:
+            trocr_text = self._run_trocr(image)
+            if trocr_text:
+                return trocr_text
+
+        # Nothing worked — return empty string.
         return ""
