@@ -1,3 +1,9 @@
-# Add and pin dependencies as you go, e.g.:
-# pillow
-# numpy
+torch
+transformers
+pillow
+datasets
+malti
+tqdm
+jiwer
+huggingface_hub
+wand

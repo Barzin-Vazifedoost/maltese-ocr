@@ -123,6 +123,12 @@ maltese-ocr/
 - PSM: `--psm 6` (single uniform block of text — critical for accuracy; default PSM 3 gives CER 0.034, PSM 6 gives CER 0.024 matching organizer baseline)
 - Post-processing: `RBLineJoiner.join_lines(..., fix_hyphenated_words=False)` (`fix_hyphenated_words` has no measurable effect on this dataset)
 
+**ImageMagick preprocessing fallback** (`wand` library, `brew install imagemagick`)
+- Triggered only when Tesseract returns < 3 characters (7 images had empty output under old PSM 3 config)
+- Pipeline: upscale 2× if height < 150 px → grayscale → contrast +50 → adaptive threshold
+- `MAGICK_HOME=/opt/homebrew` set at module level so wand finds the Homebrew dylib
+- Install: `brew install imagemagick && pip install wand`
+
 ---
 
 ## Evaluation (`test_baseline.py`)

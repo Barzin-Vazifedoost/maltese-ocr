@@ -1,57 +1,27 @@
 [
   {
-    "image": "054.jpg",
-    "predicted": "",
-    "expected": "Prinċipju ta’ gwida 1",
-    "cer": 1.0
-  },
-  {
-    "image": "067.jpg",
-    "predicted": "",
-    "expected": "Tel: +32 2 280 33 59",
-    "cer": 1.0
-  },
-  {
-    "image": "096.jpg",
-    "predicted": "",
-    "expected": "Prinċipju ta’ gwida 3",
-    "cer": 1.0
-  },
-  {
-    "image": "102.jpg",
-    "predicted": "",
-    "expected": "Il-provvista ta’ tagħlim professjonali kontinwu dwar l inklużjoni",
-    "cer": 1.0
-  },
-  {
-    "image": "106.jpg",
-    "predicted": "",
-    "expected": "Prinċipju ta’ gwida 2",
-    "cer": 1.0
-  },
-  {
-    "image": "165.jpg",
-    "predicted": "",
-    "expected": "Il-promozzjoni tal-iskambju tal-għarfien u l-kisba ta’ kompetenzi inklużivi permezz tal-kooperazzjoni u n-networking",
-    "cer": 1.0
-  },
-  {
-    "image": "214.jpg",
-    "predicted": "",
-    "expected": "SODDA SUFAN!",
-    "cer": 1.0
-  },
-  {
     "image": "227.jpg",
-    "predicted": "/ĊEEJEDU U TIĊOA",
+    "predicted": "AĊĊEJEDJI U TERDA",
     "expected": "AĊĊENTINU U TIKKINA",
     "cer": 0.5263157894736842
   },
   {
-    "image": "417.jpg",
-    "predicted": "Direttiva Kwadru dwar l- istrateġija Marina, Direttiva li tistabbilixxi qafas għal azzjoni k",
-    "expected": "Direttiva Kwadru dwar l-Istrateġija Marina, Direttiva li tistabbilixxi qafas għal azzjoni komunitarja fil-qasam tal-politika tal-ambjent marin",
-    "cer": 0.3732394366197183
+    "image": "102.jpg",
+    "predicted": "ika iii i ii ge al g, Il-provvista ta' tagħlim. professjonali kontinwu dwar We linklużjoni fumz-T",
+    "expected": "Il-provvista ta’ tagħlim professjonali kontinwu dwar l inklużjoni",
+    "cer": 0.5230769230769231
+  },
+  {
+    "image": "112.jpg",
+    "predicted": "f. MMM.L 9 SODDA SUFAN...",
+    "expected": "MMMM... SODDA SUFAN",
+    "cer": 0.47368421052631576
+  },
+  {
+    "image": "054.jpg",
+    "predicted": "Prinċipju ta'",
+    "expected": "Prinċipju ta’ gwida 1",
+    "cer": 0.42857142857142855
   },
   {
     "image": "225.jpg",
@@ -60,22 +30,22 @@
     "cer": 0.37142857142857144
   },
   {
-    "image": "112.jpg",
-    "predicted": "f. MMM.L 0 SODDA SUFAN.",
-    "expected": "MMMM... SODDA SUFAN",
-    "cer": 0.3684210526315789
-  },
-  {
     "image": "277.jpg",
     "predicted": "'ĠUFAN) SODDAI",
     "expected": "SUFAN SODDA!",
     "cer": 0.3333333333333333
   },
   {
-    "image": "167.jpg",
-    "predicted": "1.,ĦU DIN-IL-LUMITA LABRINĠAL.",
-    "expected": "...ĦU DIN IL-LUMIJA LARINĠA!",
-    "cer": 0.25
+    "image": "282.jpg",
+    "predicted": "Broad-billed Kanzletvar",
+    "expected": "Broad-billed Sandpiper",
+    "cer": 0.3181818181818182
+  },
+  {
+    "image": "154.jpg",
+    "predicted": "1-Ippjanata",
+    "expected": "1 — Ippjanata",
+    "cer": 0.23076923076923078
   },
   {
     "image": "175.jpg",
@@ -90,16 +60,16 @@
     "cer": 0.23076923076923078
   },
   {
-    "image": "036.jpg",
-    "predicted": "NAĦĠEB TRID TGĦID... SUFAN c. SODDA... 4",
-    "expected": "NAĦSEB TRID TGĦID...SUFAN SODDA...",
-    "cer": 0.20588235294117646
+    "image": "354.jpg",
+    "predicted": "1-Ippjanata",
+    "expected": "1 — Ippjanata",
+    "cer": 0.23076923076923078
   },
   {
-    "image": "208.jpg",
-    "predicted": "F'sezzjoni 7 kienu introdotti l-oqsma, il-ħtiġijiet u l-indikaturi għal dan l-approċju tista' tiġi sottolineata, billi nispjegaw kif dan l-approċju jidħol fil-proċeduri użati fi proġetti li huma relatati ma' kontenut, li s-soltu jkun fih rakkomandazzjonijiet relatati ma' xi qasam tematiku partikolari.",
-    "expected": "F’sezzjoni 7 kienu introdotti l-oqsma, il-ħtiġijiet u l-indikaturi għal edukazzjoni kif ukoll bħala rabta ma’ indikaturi speċifiċi. Is-saħħa ta’ dan l-approċju tista’ tiġi sottolineata, billi nispjegaw kif dan l-approċju jidħol fil-proċeduri użati fi proġetti li huma relatati ma’ kontenut, li s-soltu jkun fih rakkomandazzjonijiet relatati ma’ xi qasam tematiku partikolari.",
-    "cer": 0.20533333333333334
+    "image": "167.jpg",
+    "predicted": "1.,ĦU DIN-IL-LUMITA LARINĠAL.",
+    "expected": "...ĦU DIN IL-LUMIJA LARINĠA!",
+    "cer": 0.21428571428571427
   },
   {
     "image": "374.jpg",
@@ -108,28 +78,28 @@
     "cer": 0.2
   },
   {
-    "image": "288.jpg",
-    "predicted": "ODDA SUFANI",
+    "image": "036.jpg",
+    "predicted": "NAĦĠEB TRID TGĦID... SUFAN c SODDA... 4",
+    "expected": "NAĦSEB TRID TGĦID...SUFAN SODDA...",
+    "cer": 0.17647058823529413
+  },
+  {
+    "image": "214.jpg",
+    "predicted": "SODDA ĠUFANI",
     "expected": "SODDA SUFAN!",
     "cer": 0.16666666666666666
   },
   {
-    "image": "154.jpg",
-    "predicted": "1- Ippjanata",
-    "expected": "1 — Ippjanata",
-    "cer": 0.15384615384615385
+    "image": "288.jpg",
+    "predicted": "SODDA EUFANI",
+    "expected": "SODDA SUFAN!",
+    "cer": 0.16666666666666666
   },
   {
-    "image": "354.jpg",
-    "predicted": "1-—Ippjanata",
-    "expected": "1 — Ippjanata",
-    "cer": 0.15384615384615385
-  },
-  {
-    "image": "045.jpg",
-    "predicted": "r-Rev. Mikelanġ Camilleri (1814-1903) irreveda t-traduzzjoni għall-Malti mill-Vulgata tal-Erba' Vanġeli u l-Atti tal-Appostli ta' Mikiel Anton Vassalli u mbagħad ittraduċa l-kumplament tat-Testment il-Ġdid għall-Protestanti fl-1847. Dan hu wieħed mill-ftit qassisin Kattoliċi Maltin ribelli li għaddew għal mal-Protestanti ta' Frar 1814 iżda trabba l-Birgu fejn kienet toqgħod familtu (Cachia, 2013, p. 23). Ġie ordnat saċerdot Kattoliku fl-24 ta' Settembru 1836, sentejn wara li ħa d-dottorat fid-Divinità (Bonnici, 2000, p. 52). Hu stess jgħid li wara li sar saċerdot ħadem għal xi 18-il xahar bħala missjunarju fl-Alġerija minn fejn kellu jitlaq minħabba d-deni li qabdu li kien għoddu qatlu (Stuteville Isaacson, 1903, p. 177).",
-    "expected": "Ir-Rev. Mikelanġ Camilleri (1814-1903) irreveda t-traduzzjoni għall-Malti mill-Vulgata tal-Erba’ Vanġeli u l-Atti tal-Appostli ta’ Mikiel Anton Vassalli u mbagħad ittraduċa l-kumplament tat-Testment il-Ġdid għall-Protestanti fl-1847. Dan hu wieħed mill-ftit qassisin Kattoliċi Maltin ribelli li għaddew għal mal-Protestanti u qalbulhom testi reliġjużi u letterarji għall-Malti.¹ Camilleri tgħammed is-Siġġiewi l-għada li twieled fis-6 ta’ Frar 1814 iżda trabba l-Birgu fejn kienet toqgħod familtu (Cachia, 2013, p. 23). Ġie ordnat saċerdot Kattoliku fl-24 ta’ Settembru 1836, sentejn wara li ħa d-dottorat fid-Divinità (Bonnici, 2000, p. 52). Hu stess jgħid li wara li sar saċerdot ħadem għal xi 18-il xahar bħala missjunarju fl-Alġerija minn fejn kellu jitlaq minħabba d-deni li qabdu li kien għoddu qatlu (Stuteville Isaacson, 1903, p. 177).",
-    "cer": 0.1376037959667853
+    "image": "165.jpg",
+    "predicted": "Il-promozzjoni tal-iskambju tal-għarfien u l-kisba ta' kompetenzi inklużivi permezz tal-kooperazzjoni",
+    "expected": "Il-promozzjoni tal-iskambju tal-għarfien u l-kisba ta’ kompetenzi inklużivi permezz tal-kooperazzjoni u n-networking",
+    "cer": 0.13793103448275862
   },
   {
     "image": "166.jpg",
@@ -151,27 +121,21 @@
   },
   {
     "image": "205.jpg",
-    "predicted": "ĦBIEBI TIKKONFONDU XEJNI IT-TNEJN ĠĦANDKOM BAĠUNI",
+    "predicted": "ĦBIEBI TINKONFONDU XEJNI IT-TNEJN ĠĦANDKOM BAĠUNI",
     "expected": "ĦBIEB! TIKKONFONDU XEJN! IT-TNEJN GĦANDKOM RAĠUN!",
-    "cer": 0.10204081632653061
+    "cer": 0.12244897959183673
   },
   {
-    "image": "133.jpg",
-    "predicted": "Żball komuni ieħor li sibt fit-traduzzjonijiet analizzati joħodna lejn il-kategorija tal-partiċipju. Il-partiċipju passiv jittieħed minn dawk il-verbi tranżittivi li jista' jkollhom tifsira passiva. L-ewwel eżempju kien fil-partiċipju 'mitħarġin' fit-traduzzjoni għas-sentenza 'children were being withdrawn from school at a verv earlv age' li ġiet tradotta hekk: 'bosta tfal spiċċaw mitħarġin mill-iskola ta' età żgħira'. Hawnhekk ried jingħadli t-tfal 'ġew maħruġa' jew 'inħarġu' (mill-iskola) iżda minflok ġieevokat is-sens ta' 'ingħataw taħriġ'. Il-partiċipju ntuża ħażin ukoll fit-traduzzjoni tal-kelma 'converted' fis-sentenza ''The schools were converted into hospitals'. Kien hemm uħud mill-oriġini Taljana 'convertire'. Fil-lingwa Taljana, il-partiċipju passiv t li traduċewha 'ikkonvertati', a' verbili għandhom it-tmiem tagħhom '-ire' jieħdu '-ito' fis-singular u '-iti' fil-plural. Il-Malti jsegwi din il-prassi u għaldaqstant, il-verb hawnhekk irid ikun 'ikkonvertiti'. Partiċipju ieħor li ħafna studenti traduċew ħażin kien 'spent' fis-sentenza '...and less and less monev was being spent on education'. Dan il-partiċipju ngħata 566 KAN KAĦU diversi forom inkorretti fosthom: 'mifquq', 'monfoq', 'mifquq', 'nfqa ' minflok 'minfuq'. Fit-total tagħhom, l-iżbalji grammatikali kienu jikkonsistu partikolarment f'de fiċjenzi pjuttost elementari li",
-    "expected": "Żball komuni ieħor li sibt fit-traduzzjonijiet analizzati joħodna lejn il-kategorija tal-partiċipju. Il-partiċipju passiv jittieħed minn dawk il-verbi tranżittivi li jista’ jkollhom tifsira passiva. L-ewwel eżempju kien fil-partiċipju “mitħarġin” fit-traduzzjoni għas-sentenza “children were being withdrawn from school at a very early age” li ġiet tradotta hekk: “bosta tfal spiċċaw mitħarġin mill-iskola ta’ età żgħira”. Hawnhekk ried jingħad li t-tfal “ġew maħruġa” jew “inħarġu” (mill-iskola) iżda minflok ġie evokat is-sens ta’ “ingħataw taħriġ”. Il-partiċipju ntuża ħażin ukoll fit-traduzzjoni tal-kelma “converted” fis-sentenza “The schools were converted into hospitals”. Kien hemm uħud li traduċewha “ikkonvertati”, mill-oriġini Taljana “convertire”. Fil-lingwa Taljana, il-partiċipju passiv ta’ verbi li għandhom it-tmiem tagħhom “-ire” jieħdu “-ito” fis-singular u “-iti” fil-plural. Il-Malti jsegwi din il-prassi u għaldaqstant, il-verb hawnhekk irid ikun “ikkonvertiti”. Partiċipju ieħor li ħafna studenti traduċew ħażin kien “spent” fis-sentenza “...and less and less money was being spent on education”. Dan il-partiċipju ngħata diversi forom inkorretti fosthom: “mifquq”, “monfoq”, “mifquq”, “nfqat” minflok “minfuq”. Fit-total tagħhom, l-iżbalji grammatikali kienu jikkonsistu partikolarment f’defiċjenzi pjuttost elementari li",
-    "cer": 0.09449404761904762
+    "image": "067.jpg",
+    "predicted": "Tel:-£32 2 280 33 59",
+    "expected": "Tel: +32 2 280 33 59",
+    "cer": 0.1
   },
   {
     "image": "006.jpg",
     "predicted": "laċċent 43",
     "expected": "l-aċċent 43",
     "cer": 0.09090909090909091
-  },
-  {
-    "image": "185.jpg",
-    "predicted": "L-iżvilupp ta' impenn k xi għall-edukazzjoni inklużiva",
-    "expected": "L-iżvilupp ta’ impenn komuni għall-edukazzjoni inklużiva",
-    "cer": 0.08928571428571429
   },
   {
     "image": "082.jpg",
@@ -198,16 +162,16 @@
     "cer": 0.07894736842105263
   },
   {
+    "image": "021.jpg",
+    "predicted": "EurTerm European Union Terminologv 15(24)",
+    "expected": "EurTerm - European Union Terminology 15(24)",
+    "cer": 0.06976744186046512
+  },
+  {
     "image": "180.jpg",
     "predicted": "Ruddv Turnstone",
     "expected": "Ruddy Turnstone",
     "cer": 0.06666666666666667
-  },
-  {
-    "image": "218.jpg",
-    "predicted": "Latin. Fl-istess taqsima naraw 'Lil Anaktorja' 9 ta' Saffo maqluba għall-Malti minn Victor Xuereb u ''Bandusia' ta' Orazju maqluba minn Achille Mizzi.",
-    "expected": "Latin. Fl-istess taqsima naraw “Lil Anaktorja” ta’ Saffo maqluba għall-Malti minn Victor Xuereb u “Bandusia” ta’ Orazju maqluba minn Achille Mizzi.",
-    "cer": 0.061224489795918366
   },
   {
     "image": "053.jpg",
@@ -234,6 +198,12 @@
     "cer": 0.05263157894736842
   },
   {
+    "image": "196.jpg",
+    "predicted": "1 Żewġ saċerdoti Maltin oħra qalbu testi reliġjużi għall-Protestanti: Giovanni Falzon u Giuseppe Maurin. Fl-1926 il-British and Foreign Bible Societv (BFBS) ħarġet JI Ctieb tas-Salmi, maqlubin minn Falzon (Cachia, Jannar 2017, p. 32). Maurin ipprova jaqleb il-Vanġeli; qabel ma miet reġa' għadda fi ħdan il-Knisja Kattolika (Sant, 1979, pp. 88, 90; Cachia, Jannar 2017, pp. 30-34)... ——— MMA IMAM",
+    "expected": "¹ Żewġ saċerdoti Maltin oħra qalbu testi reliġjużi għall-Protestanti: Giovanni Falzon u Giuseppe Maurin. Fl-1926 il-British and Foreign Bible Society (BFBS) ħarġet Il Ctieb tas-Salmi, maqlubin minn Falzon (Cachia, Jannar 2017, p. 32). Maurin ipprova jaqleb il-Vanġeli; qabel ma miet reġa’ għadda fi ħdan il-Knisja Kattolika (Sant, 1979, pp. 88, 90; Cachia, Jannar 2017, pp. 30-34).",
+    "cer": 0.05249343832020997
+  },
+  {
     "image": "094.jpg",
     "predicted": "communitv-led local development strategv",
     "expected": "community-led local development strategy",
@@ -252,10 +222,28 @@
     "cer": 0.05
   },
   {
-    "image": "021.jpg",
-    "predicted": "EurTerm — European Union Terminologv 15(24)",
-    "expected": "EurTerm - European Union Terminology 15(24)",
-    "cer": 0.046511627906976744
+    "image": "250.jpg",
+    "predicted": "Verżjonijiet elettroniċi ta' dan ir-rapport b'21 lingwa wieħed jista' jsibhom fil-websajt tal-Agencv: wWw.european-agencv.org",
+    "expected": "Verżjonijiet elettroniċi ta’ dan ir-rapport b’21 lingwa wieħed jista’ jsibhom fil-websajt tal-Agency: www.european-agency.org",
+    "cer": 0.048
+  },
+  {
+    "image": "096.jpg",
+    "predicted": "Prinċipju ta' gwida 3",
+    "expected": "Prinċipju ta’ gwida 3",
+    "cer": 0.047619047619047616
+  },
+  {
+    "image": "106.jpg",
+    "predicted": "Prinċipju ta' gwida 2",
+    "expected": "Prinċipju ta’ gwida 2",
+    "cer": 0.047619047619047616
+  },
+  {
+    "image": "218.jpg",
+    "predicted": "Latin. Fl-istess taqsima naraw 'Lil Anaktorja' ta' Saffo maqluba għall-Malti minn Victor Xuereb u ''Bandusia' ta' Orazju maqluba minn Achille Mizzi.",
+    "expected": "Latin. Fl-istess taqsima naraw “Lil Anaktorja” ta’ Saffo maqluba għall-Malti minn Victor Xuereb u “Bandusia” ta’ Orazju maqluba minn Achille Mizzi.",
+    "cer": 0.047619047619047616
   },
   {
     "image": "369.jpg",
@@ -265,27 +253,15 @@
   },
   {
     "image": "150.jpg",
-    "predicted": "In-NV bil-forma 1v23an",
+    "predicted": "In-NV bil-forma 1v23àn",
     "expected": "In-NV bil-forma 1v23ān",
     "cer": 0.045454545454545456
-  },
-  {
-    "image": "251.jpg",
-    "predicted": "Mikelanġ Camilleri, il-qassis ribell u t-traduttur ta' Il Ħajva u il Vinturi ta' Robinson Krusoe, ta' Vork: miktuba minnu in nifsu tal-1846",
-    "expected": "Mikelanġ Camilleri, il-qassis ribell u t-traduttur ta’ Il Ħaỹa u il Vinturi ta’ Robinson Krusoe, ta’ York: miktuba minnu in nifsu tal-1846",
-    "cer": 0.043478260869565216
   },
   {
     "image": "346.jpg",
     "predicted": "IT-TISĦIĦ TA' REŻILJENZA PERMEZZ TA' SISTEMI TA' EDUKAZZJONI INKLUŻIVA",
     "expected": "IT-TISĦIĦ TA’ REŻILJENZA PERMEZZ TA’ SISTEMI TA’ EDUKAZZJONI INKLUŻIVA",
     "cer": 0.04285714285714286
-  },
-  {
-    "image": "396.jpg",
-    "predicted": "rigward kienet meta ġejt biex nagħti t-traduzzjoni tal-kelma 'animals'. Bħala traduzzjoni stajt użajt il-kelma Semitika 'bhejjem', perċ għażilt li f'dan il-każ nuża l-kelma Maltija 9 ta' nisel. Rumanz 'annimali'. Din il-konklużjoni wasalt għaliha meta rajt li ħafna nies fis-settur tal-agrikoltura jużaw il-kelma 'bhima' għal annimal pjuttost kbir u b'erba' saqajn. Billi fil-każ tiegħi l-kelma Ingliża 'animals' kienet qed tirreferi għat-tjur, użajt il-kelma 'annimali'.",
-    "expected": "rigward kienet meta ġejt biex nagħti t-traduzzjoni tal-kelma ‘animals’. Bħala traduzzjoni stajt użajt il-kelma Semitika ‘bhejjem’, però għażilt li f’dan il-każ nuża l-kelma Maltija ta’ nisel Rumanz ‘annimali’. Din il-konklużjoni wasalt għaliha meta rajt li ħafna nies fis-settur tal-agrikoltura jużaw il-kelma ‘bhima’ għal annimal pjuttost kbir u b’erba’ saqajn. Billi fil-każ tiegħi l-kelma Ingliża ‘animals’ kienet qed tirreferi għat-tjur, użajt il-kelma ‘annimali’.",
-    "cer": 0.042735042735042736
   },
   {
     "image": "147.jpg",
@@ -306,15 +282,15 @@
     "cer": 0.041666666666666664
   },
   {
+    "image": "396.jpg",
+    "predicted": "rigward kienet meta ġejt biex nagħti t-traduzzjoni tal-kelma 'animals'. Bħala traduzz-joni stajt użajt il-kelma Semitika 'bhejjem', perċ għażilt li f'dan il-każ nuża l-kelma Maltija ta' nisel. Rumanz 'annimali'. Din il-konklużjoni wasalt għaliha meta rajt li ħafna nies fis-settur tal-agrikoltura jużaw il-kelma 'bhima' għal annimal pjuttost kbir u b'erba' saqajn. Billi fil-każ tiegħi l-kelma Ingliża 'animals' kienet qed tirreferi għat-tjur, użajt il-kelma 'annimali'.",
+    "expected": "rigward kienet meta ġejt biex nagħti t-traduzzjoni tal-kelma ‘animals’. Bħala traduzzjoni stajt użajt il-kelma Semitika ‘bhejjem’, però għażilt li f’dan il-każ nuża l-kelma Maltija ta’ nisel Rumanz ‘annimali’. Din il-konklużjoni wasalt għaliha meta rajt li ħafna nies fis-settur tal-agrikoltura jużaw il-kelma ‘bhima’ għal annimal pjuttost kbir u b’erba’ saqajn. Billi fil-każ tiegħi l-kelma Ingliża ‘animals’ kienet qed tirreferi għat-tjur, użajt il-kelma ‘annimali’.",
+    "cer": 0.0405982905982906
+  },
+  {
     "image": "056.jpg",
     "predicted": "5.2 Indikaturi tal-policv",
     "expected": "5.2 Indikaturi tal-policy",
-    "cer": 0.04
-  },
-  {
-    "image": "250.jpg",
-    "predicted": "Verżjonijiet elettroniċi ta' dan ir-rapport b'21 lingwa wieħed jista' jsibhom fil-websajt tal-Agencv: www.european-agencv.org",
-    "expected": "Verżjonijiet elettroniċi ta’ dan ir-rapport b’21 lingwa wieħed jista’ jsibhom fil-websajt tal-Agency: www.european-agency.org",
     "cer": 0.04
   },
   {
@@ -328,6 +304,12 @@
     "predicted": "L-istampa tal-faċċata: collage mix-xoghol ta' Pascal Souvais, Ecole d'Enseignement Secondaire Spċcialisċ de la Communautċ Francaise, Verviers, Belgium.",
     "expected": "L-istampa tal-faċċata: collage mix-xoghol ta’ Pascal Souvais, Ecole d’Enseignement Secondaire Spécialisé de la Communauté Française, Verviers, Belgium.",
     "cer": 0.039735099337748346
+  },
+  {
+    "image": "133.jpg",
+    "predicted": "Żball komuni ieħor li sibt fit-traduzzjonijiet analizzati joħodna lejn il-kategorija tal-partiċipju. Il-partiċipju passiv jittieħed minn dawk il-verbi tranżittivi li jista' jkollhom tifsira passiva. L-ewwel eżempju kien fil-partiċipju 'mitħarġin' fit-traduzzjoni għas-sentenza 'children were being withdrawn from school at a verv earlv age' li ġiet tradotta hekk: 'bosta tfal spiċċaw mitħarġin mill-iskola ta' età żgħira'. Hawnhekk ried jingħadli t-tfal 'ġew maħruġa' jew 'inħarġu' (mill-iskola)iżda minflok ġieevokat is-sens ta' 'ingħataw taħriġ'. Il-partiċipju ntuża ħażin ukoll fit-traduzzjoni tal-kelma 'converted' fis-sentenza 'The schools were converted into hospitals'. Kien hemm uħud li traduċewha 'ikkonvertati', mill-oriġini Taljana 'convertire'. Fil-lingwa Taljana, il-partiċipju passiv ta' verbi li għandhom it-tmiem tagħhom '-ire' jieħdu '-ito' fis-singular u '-iti' fil-plural. Il-Malti jsegwi din il-prassi u għaldaqstant, il-verb hawnhekk irid ikun 'ikkonvertiti'. Partiċipju ieħor li ħafna studenti traduċew ħażin kien 'spent' fis-sentenza '...and less and less monev was being spent on education'. Dan il-partiċipju ngħata diversi forom inkorretti fosthom: 'mifquq', 'monfoq', 'mifquq', 'nfqat' minflok 'minfuq'. Fit-total tagħhom, l-iżbalji grammatikali kienu jikkonsistu partikolarment f'defiċjenzi pjuttost elementari li",
+    "expected": "Żball komuni ieħor li sibt fit-traduzzjonijiet analizzati joħodna lejn il-kategorija tal-partiċipju. Il-partiċipju passiv jittieħed minn dawk il-verbi tranżittivi li jista’ jkollhom tifsira passiva. L-ewwel eżempju kien fil-partiċipju “mitħarġin” fit-traduzzjoni għas-sentenza “children were being withdrawn from school at a very early age” li ġiet tradotta hekk: “bosta tfal spiċċaw mitħarġin mill-iskola ta’ età żgħira”. Hawnhekk ried jingħad li t-tfal “ġew maħruġa” jew “inħarġu” (mill-iskola) iżda minflok ġie evokat is-sens ta’ “ingħataw taħriġ”. Il-partiċipju ntuża ħażin ukoll fit-traduzzjoni tal-kelma “converted” fis-sentenza “The schools were converted into hospitals”. Kien hemm uħud li traduċewha “ikkonvertati”, mill-oriġini Taljana “convertire”. Fil-lingwa Taljana, il-partiċipju passiv ta’ verbi li għandhom it-tmiem tagħhom “-ire” jieħdu “-ito” fis-singular u “-iti” fil-plural. Il-Malti jsegwi din il-prassi u għaldaqstant, il-verb hawnhekk irid ikun “ikkonvertiti”. Partiċipju ieħor li ħafna studenti traduċew ħażin kien “spent” fis-sentenza “...and less and less money was being spent on education”. Dan il-partiċipju ngħata diversi forom inkorretti fosthom: “mifquq”, “monfoq”, “mifquq”, “nfqat” minflok “minfuq”. Fit-total tagħhom, l-iżbalji grammatikali kienu jikkonsistu partikolarment f’defiċjenzi pjuttost elementari li",
+    "cer": 0.03943452380952381
   },
   {
     "image": "076.jpg",
@@ -346,6 +328,12 @@
     "predicted": "Varjanti morfoloġiċi ta' 1v23an mogħtija minn Aquilina",
     "expected": "Varjanti morfoloġiċi ta’ 1v23ān mogħtija minn Aquilina",
     "cer": 0.037037037037037035
+  },
+  {
+    "image": "251.jpg",
+    "predicted": "Mikelanġ Camilleri, il-qassis ribell u t-traduttur ta' Il Ħaja u il Vinturi ta' Robinson Krusoe, ta' Vork: miktuba minnu in nifsu tal-1846",
+    "expected": "Mikelanġ Camilleri, il-qassis ribell u t-traduttur ta’ Il Ħaỹa u il Vinturi ta’ Robinson Krusoe, ta’ York: miktuba minnu in nifsu tal-1846",
+    "cer": 0.036231884057971016
   },
   {
     "image": "389.jpg",
@@ -486,12 +474,6 @@
     "cer": 0.025
   },
   {
-    "image": "321.jpg",
-    "predicted": "F'dawn il-paġni se taqraw x'kiteb Ġorġ Peresso dwar il-poeżija ta' San Ġwann tas-Salib u t-traduzzjonijiet bil-Malti ta' Albert M. Cassola f'erba' partijiet, u se taqraw wkoll intervista (editjata) ta' Natasha Turner ma' Peresso i dehret f'gazzetta lokali aktarx fl-2008: xtaqna u li kieku għamilnielu intervista ġdida imma ċ-ċirkostanzi i bħalissa qed idawru lil Ġorġ Peresso għamluha diffiċli biex tali intervista ssir. Iżda l-intervista ta' Turner turina l-umanità ta' dan l-awtur u xandar, x'importanza għandu l-qari f'ħajtu, x'kotba qara u x'awturi jħobb biex ikollna ħjiel minn fejn Ġorġ Peresso jikseb il-profondità ta' kitbietu letterarji u l-iskripts u l-kummentarji tax-xandir tiegħu — għax minn ewl id-dinja m'hemmx kittieb tajjeb i ma jaqrax ħafna. Fl-artiklu ta' Arnold Cassola naraw l-umanità tal-awtur mil-lenti ta' ibnu. Narawh jesprimi d-diqa tiegħu li ma kellux ċans jgħix is-snin tiegħu ta' adult ma' missieru minħabba l-mewt ħesrem tiegħu.",
-    "expected": "F’dawn il-paġni se taqraw x’kiteb Ġorġ Peresso dwar il-poeżija ta’ San Ġwann tas-Salib u t-traduzzjonijiet bil-Malti ta’ Albert M. Cassola f’erba’ partijiet, u se taqraw wkoll intervista (editjata) ta’ Natasha Turner ma’ Peresso li dehret f’gazzetta lokali aktarx fl-2008: xtaqna u li kieku għamilnielu intervista ġdida imma ċ-ċirkostanzi li bħalissa qed idawru lil Ġorġ Peresso għamluha diffiċli biex tali intervista ssir. Iżda l-intervista ta’ Turner turina l-umanità ta’ dan l-awtur u xandar, x’importanza għandu l-qari f’ħajtu, x’kotba qara u x’awturi jħobb biex ikollna ħjiel minn fejn Ġorġ Peresso jikseb il-profondità ta’ kitbietu letterarji u l-iskripts u l-kummentarji tax-xandir tiegħu — għax minn ewl id-dinja m’hemmx kittieb tajjeb li ma jaqrax ħafna. Fl-artiklu ta’ Arnold Cassola naraw l-umanità tal-awtur mil-lenti ta’ ibnu. Narawh jesprimi d-diqa tiegħu li ma kellux ċans jgħix is-snin tiegħu ta’ adult ma’ missieru minħabba l-mewt ħesrem tiegħu.",
-    "cer": 0.02494802494802495
-  },
-  {
     "image": "178.jpg",
     "predicted": "Gwida għall-Istabbiliment ta' Kultura ta' Komunikazzjoni Effettiva fl-Edukazzjoni",
     "expected": "Gwida għall-Istabbiliment ta’ Kultura ta’ Komunikazzjoni Effettiva fl-Edukazzjoni",
@@ -510,22 +492,16 @@
     "cer": 0.023696682464454975
   },
   {
+    "image": "013.jpg",
+    "predicted": "Madankollu, is-serje ta' ambjenti u tipi ta' provedimenti evidenti li wieħed isib fil-pajjiżi jagħfsu bis-sħiħ fuq id-diffikultajiet enormi biex jitqabblu sitwazzjonijiet fl-Ewropa kollha. Il-pajjiżi kollha jinsabu 'f'punti differenti tal-vjaġġ għall-inklużjoni li tagħmel referenza għalihom. l-Istqarrija  Salamanca' (Peacev, (2006). It-terminu 'inklużjoni' nnifsu ilu fuq vjaġġ sa minn mindu ġie inizjalment introdott f'kunest edukattiv. F'aspetti oħra x-xogħol tal-Agencv (p.e. Watkins, 2007) wieħed isib argument ieħor fuq l-iżvilupp: '... wieħed illum jifhem li dan jikkonċerna medda usa' ta' studenti li għandhom ċans ta' inklużjoni minn dawk identifikati bħala SEN. (p. 16) L-inklużjoni tista' tintqies bħala attentat biex wieħed imexxi l-ideat tal-edukazzjoni għal kulħadd lil hinn mill-'mainstreaming' fejn studenti jistgħu jiġu integrati — jiġifieri jkunu fl-istess lokazzjoni fiżika — imma mhux neċessarjament jaqsmu esperjenza edukattiva ma' sħabhom. L-inklużjoni timplika li studenti bl-SEN ikollhom 'aċċess għall-kurrikulu' fl-aħjar mod kif wieħed jilħaq il-ħtiġijiet tagħhom.",
+    "expected": "Madankollu, is-serje ta’ ambjenti u tipi ta’ provedimenti evidenti li wieħed isib fil-pajjiżi jagħfsu bis-sħiħ fuq id-diffikultajiet enormi biex jitqabblu sitwazzjonijiet fl-Ewropa kollha. Il-pajjiżi kollha jinsabu ‘f’punti differenti tal-vjaġġ għall-inklużjoni li tagħmel referenza għalihom l-Istqarrija Salamanca’ (Peacey, 2006). It-terminu ‘inklużjoni’ nnifsu ilu fuq vjaġġ sa minn mindu ġie inizjalment introdott f’kunest edukattiv. F’aspetti oħra x-xogħol tal-Agency (p.e. Watkins, 2007) wieħed isib argument ieħor fuq l-iżvilupp: ‘... wieħed illum jifhem li dan jikkonċerna medda usa’ ta’ studenti li għandhom ċans ta’ inklużjoni minn dawk identifikati bħala SEN.’ (p. 16) L-inklużjoni tista’ tintqies bħala attentat biex wieħed imexxi l-ideat tal-edukazzjoni għal kulħadd lil hinn mill-‘mainstreaming’ fejn studenti jistgħu jiġu integrati — jiġifieri jkunu fl-istess lokazzjoni fiżika — imma mhux neċessarjament jaqsmu esperjenza edukattiva ma’ sħabhom. L-inklużjoni timplika li studenti bl-SEN ikollhom ‘aċċess għall-kurrikulu’ fl-aħjar mod kif wieħed jilħaq il-ħtiġijiet tagħhom.",
+    "cer": 0.02297794117647059
+  },
+  {
     "image": "384.jpg",
     "predicted": "Din il-verżjoni tar-rapport hija traduzzjoni prodotta mill-pajjiżi membri tal-Agencv. mill-manuskritt oriġinali bl-Ingliż tal-Agencv.",
     "expected": "Din il-verżjoni tar-rapport hija traduzzjoni prodotta mill-pajjiżi membri tal-Agency mill-manuskritt oriġinali bl-Ingliż tal-Agency.",
     "cer": 0.022727272727272728
-  },
-  {
-    "image": "161.jpg",
-    "predicted": "1.2.2: F'konformità mal-approċċ ibbażat fuq id-drittijiet tal-bniedem, hemm ċagliq ċar minn approċċ mediku għal wieħed soċjopedagoġiku2",
-    "expected": "1.2.2: F’konformità mal-approċċ ibbażat fuq id-drittijiet tal-bniedem, hemm ċaqliq ċar minn approċċ mediku għal wieħed soċjopedagoġiku?",
-    "cer": 0.022222222222222223
-  },
-  {
-    "image": "013.jpg",
-    "predicted": "Madankollu, is-serje ta' ambjenti u tipi ta' provedimenti evidenti li wieħed isib fil-pajjiżi jagħfsu bis-sħiħ fuq id-diffikultajiet enormi biex jitqabblu sitwazzjonijiet fl-Ewropa kollha. Il-pajjiżi kollha jinsabu 'f'punti differenti tal-vjaġġ għall-inklużjoni li tagħmel referenza għalihom. l-Istqarrija Salamanca' (Peacev, (2006). It-terminu 'inklużjoni' nnifsu ilu fuq vjaġġ sa minn mindu ġie inizjalment introdott f'kunest edukattiv. F'aspetti oħra x-xogħol tal-Agencv (p.e. Watkins, 2007) wieħed isib argument ieħor fuq l-iżvilupp: '... wieħed illum jifhem li dan jikkonċerna medda usa' ta' studenti li għandhom ċans ta' inklużjoni minn dawk identifikati bħala SEN. (p. 16) L-inklużjoni tista' tintqies bħala attentat biex wieħed imexxi l-ideat tal-edukazzjoni għal kulħadd lil hinn mill-'mainstreaming' fejn studenti jistgħu jiġu integrati — jiġifieri jkunu fl-istess lokazzjoni fiżika — imma mhux neċessarjament jaqsmu esperjenza edukattiva ma' sħabhom. L-inklużjoni timplika li studenti bl-SEN ikollhom 'aċċess għall-kurrikulu' fl-aħjar mod kif wieħed jilħaq il-ħtiġijiet tagħhom.",
-    "expected": "Madankollu, is-serje ta’ ambjenti u tipi ta’ provedimenti evidenti li wieħed isib fil-pajjiżi jagħfsu bis-sħiħ fuq id-diffikultajiet enormi biex jitqabblu sitwazzjonijiet fl-Ewropa kollha. Il-pajjiżi kollha jinsabu ‘f’punti differenti tal-vjaġġ għall-inklużjoni li tagħmel referenza għalihom l-Istqarrija Salamanca’ (Peacey, 2006). It-terminu ‘inklużjoni’ nnifsu ilu fuq vjaġġ sa minn mindu ġie inizjalment introdott f’kunest edukattiv. F’aspetti oħra x-xogħol tal-Agency (p.e. Watkins, 2007) wieħed isib argument ieħor fuq l-iżvilupp: ‘... wieħed illum jifhem li dan jikkonċerna medda usa’ ta’ studenti li għandhom ċans ta’ inklużjoni minn dawk identifikati bħala SEN.’ (p. 16) L-inklużjoni tista’ tintqies bħala attentat biex wieħed imexxi l-ideat tal-edukazzjoni għal kulħadd lil hinn mill-‘mainstreaming’ fejn studenti jistgħu jiġu integrati — jiġifieri jkunu fl-istess lokazzjoni fiżika — imma mhux neċessarjament jaqsmu esperjenza edukattiva ma’ sħabhom. L-inklużjoni timplika li studenti bl-SEN ikollhom ‘aċċess għall-kurrikulu’ fl-aħjar mod kif wieħed jilħaq il-ħtiġijiet tagħhom.",
-    "cer": 0.022058823529411766
   },
   {
     "image": "380.jpg",
@@ -534,10 +510,22 @@
     "cer": 0.022058823529411766
   },
   {
+    "image": "321.jpg",
+    "predicted": "F'dawn il-paġni se taqraw x'kiteb Ġorġ Peresso dwar il-poeżija ta' San Ġwann tas-Salib u t-traduzzjonijiet bil-Malti ta' Albert M. Cassola f'erba' partijiet, u se taqraw wkoll intervista (editjata) ta' Natasha Turner ma' Peresso li dehret f'gazzetta lokali aktarx fl-2008: xtaqna u li kieku għamilnielu intervista ġdida imma ċ-ċirkostanzi li bħalissa qed idawru lil Ġorġ Peresso għamluha diffiċli biex tali intervista ssir. Iżda l-intervista ta' Turner turina l-umanità ta' dan l-awtur u xandar, x'importanza għandu l-qari f'ħajtu, x'kotba qara u x'awturi jħobb biex ikollna ħjiel minn fejn Ġorġ Peresso jikseb il-profondità ta' kitbietu letterarji u l-iskripts u l-kummentarji tax-xandir tiegħu — għax minn ewl id-dinja m'hemmx kittieb tajjeb li ma jaqrax ħafna. Fl-artiklu ta' Arnold Cassola naraw l-umanità tal-awtur mil-lenti ta' ibnu. Narawh jesprimi d-diqa tiegħu li ma kellux ċans jgħix is-snin tiegħu ta' adult ma' missieru minħabba l-mewt ħesrem tiegħu.",
+    "expected": "F’dawn il-paġni se taqraw x’kiteb Ġorġ Peresso dwar il-poeżija ta’ San Ġwann tas-Salib u t-traduzzjonijiet bil-Malti ta’ Albert M. Cassola f’erba’ partijiet, u se taqraw wkoll intervista (editjata) ta’ Natasha Turner ma’ Peresso li dehret f’gazzetta lokali aktarx fl-2008: xtaqna u li kieku għamilnielu intervista ġdida imma ċ-ċirkostanzi li bħalissa qed idawru lil Ġorġ Peresso għamluha diffiċli biex tali intervista ssir. Iżda l-intervista ta’ Turner turina l-umanità ta’ dan l-awtur u xandar, x’importanza għandu l-qari f’ħajtu, x’kotba qara u x’awturi jħobb biex ikollna ħjiel minn fejn Ġorġ Peresso jikseb il-profondità ta’ kitbietu letterarji u l-iskripts u l-kummentarji tax-xandir tiegħu — għax minn ewl id-dinja m’hemmx kittieb tajjeb li ma jaqrax ħafna. Fl-artiklu ta’ Arnold Cassola naraw l-umanità tal-awtur mil-lenti ta’ ibnu. Narawh jesprimi d-diqa tiegħu li ma kellux ċans jgħix is-snin tiegħu ta’ adult ma’ missieru minħabba l-mewt ħesrem tiegħu.",
+    "cer": 0.02182952182952183
+  },
+  {
     "image": "344.jpg",
     "predicted": "L-għan ta' dan il-kapitlu huwa li jagħti fil-qosor l-elementi ewlenin li ngħataw importanza f'għadd ta' studji Ewropej, analiżijiet u studji ta' riċerka fuq l-edukazzjoni ta' studenti bi ħtiġijiet speċjali (SEN) u bi sfond ta' immigrant billi ffukaw fuq il-ħames oqsma li diġà tkellimna dwarhom fl-introduzzjoni (definizzjoni, data, proviżjoni edukattiva, miżuri ta' sostenn u proċeduri ta' assessjar). Lista ta' referenzi dwar id-dokumenti eżistenti Ewropej, internazzjonali u nazzjonali, li ngħataw każhom f'din l-analiżi tista' tinkiseb mill-web area tal-Agencv li hija ddedikata għall-proġett tematiku: www.european-agencv.org/agencv-projects",
     "expected": "L-għan ta’ dan il-kapitlu huwa li jagħti fil-qosor l-elementi ewlenin li ngħataw importanza f’għadd ta’ studji Ewropej, analiżijiet u studji ta’ riċerka fuq l-edukazzjoni ta’ studenti bi ħtiġijiet speċjali (SEN) u bi sfond ta’ immigrant billi ffukaw fuq il-ħames oqsma li diġà tkellimna dwarhom fl-introduzzjoni (definizzjoni, data, proviżjoni edukattiva, miżuri ta’ sostenn u proċeduri ta’ assessjar). Lista ta’ referenzi dwar id-dokumenti eżistenti Ewropej, internazzjonali u nazzjonali, li ngħataw każhom f’din l-analiżi tista’ tinkiseb mill-web area tal-Agency li hija ddedikata għall-proġett tematiku: www.european-agency.org/agency-projects",
     "cer": 0.021671826625386997
+  },
+  {
+    "image": "323.jpg",
+    "predicted": "Ma setax jonqos ukoll li, bħal kull traduttur ieħor, niltaqa' ma' kliem li ma għandniex ter-minoloġija għalih bil-Malti. Hekk pereżempju ġrali meta ġejt biex nittraduċi l-kelma 'snood'. Ekwivalenza bil-Malti għaliha ma sibtx. L-għażla kienet jekk noħloqx terminu bil-Malti għaliha bbażat fuq l-etimoloġija ta' kelma bar-ranija jew nużax il-kelma Ingliża miktuba fo-netikament bil-Malti. Rajt li jekk nuża l-kelma Ingliża kien ikun hemm ftit diffikultà minħab-ba li l-kelma ma kienx ikollha plural li jsegwi r-regoli ta' kliem Malti. Wara li rajt it-tifsira ta' 'snood' b'lingwi differenti, iddeċidejt li niġġenera terminu bil-Malti ('reżilju') fuq dak Franċiż 'resilk' għax rajt li għall-kelma li kont se nissuġġerixxi ma kienx ħa jkun hemm diffi-kultà meta jkun hemm il-bżonn li jissawwar il-plural tagħha. Dan għaliex il-kelma li qed nis-suġġerixxi ssegwi faċilment ir-regoli kif jis-sawwar il-plural ta' kliem Malti. Inħoss li meta terminu ma jkunx jeżisti bil-Malti, it-tradutturi ma għandhomx jibżgħu joħolqu termini ġodda Maltin ibbażati fuq l-etimoloġija ta' kelma ta' lingwa barranija sakemm dan it-terminu jkun isegwi faċilment ir-regoli ta' kliem Malti. Għalkemm dan il-kliem jieħu ż-żmien biex jiġi aċċettat, fil-fehma tiegħi jkun aħjar milli nis-",
+    "expected": "Ma setax jonqos ukoll li, bħal kull traduttur ieħor, niltaqa’ ma’ kliem li ma għandniex terminoloġija għalih bil-Malti. Hekk pereżempju ġrali meta ġejt biex nittraduċi l-kelma ‘snood’. Ekwivalenza bil-Malti għaliha ma sibtx. L-għażla kienet jekk noħloqx terminu bil-Malti għaliha bbażat fuq l-etimoloġija ta’ kelma barranija jew nużax il-kelma Ingliża miktuba fonetikament bil-Malti. Rajt li jekk nuża l-kelma Ingliża kien ikun hemm ftit diffikultà minħabba li l-kelma ma kienx ikollha plural li jsegwi r-regoli ta’ kliem Malti. Wara li rajt it-tifsira ta’ ‘snood’ b’lingwi differenti, iddeċidejt li niġġenera terminu bil-Malti (‘reżilju’) fuq dak Franċiż ‘résilk’ għax rajt li għall-kelma li kont se nissuġġerixxi ma kienx ħa jkun hemm diffikultà meta jkun hemm il-bżonn li jissawwar il-plural tagħha. Dan għaliex il-kelma li qed nissuġġerixxi ssegwi faċilment ir-regoli kif jissawwar il-plural ta’ kliem Malti. Inħoss li meta terminu ma jkunx jeżisti bil-Malti, it-tradutturi ma għandhomx jibżgħu joħolqu termini ġodda Maltin ibbażati fuq l-etimoloġija ta’ kelma ta’ lingwa barranija sakemm dan it-terminu jkun isegwi faċilment ir-regoli ta’ kliem Malti. Għalkemm dan il-kliem jieħu ż-żmien biex jiġi aċċettat, fil-fehma tiegħi jkun aħjar milli nis-",
+    "cer": 0.020783373301358914
   },
   {
     "image": "270.jpg",
@@ -582,22 +570,10 @@
     "cer": 0.019230769230769232
   },
   {
-    "image": "323.jpg",
-    "predicted": "Ma setax jonqos ukoll li, bħal kull traduttur ieħor, niltaqa' ma' kliem li ma għandniex terminoloġija għalih bil-Malti. Hekk pereżempju ġrali meta ġejt biex nittraduċi l-kelma 'snood'. Ekwivalenza bil-Malti għaliha ma sibtx. L-għażla kienet jekk noħloqx terminu bil-Malti għaliha bbażat fuq l-etimoloġija ta' kelma barranija jew nużax il-kelma Ingliża miktuba fonetikament bil-Malti. Rajt li jekk nuża l-kelma Ingliża kien ikun hemm ftit diffikultà minħabba li l-kelma ma kienx ikollha plural li jsegwi r-regoli ta' kliem Malti. Wara li rajt it-tifsira 2 06 ta' 'snood' b'lingwi differenti, iddeċidejt li niġġenera terminu bil-Malti ('reżilju') fuq dak Franċiż 'resilk' għax rajt li għall-kelma li kont se nissuġġerixxi ma kienx ħa jkun hemm diffikultà meta jkun hemm il-bżonn li jissawwar il-plural tagħha. Dan għaliex il-kelma li qed nissuġġerixxi ssegwi faċilment ir-regoli kif jissawwar il-plural ta' kliem Malti. Inħoss li meta terminu ma jkunx jeżisti bil-Malti, it-tradutturi ma għandhomx jibżgħu joħolqu termini ġodda Maltin ibbażati fuq l-etimoloġija ta' kelma ta' lingwa barranija sakemm dan it-terminu jkun isegwi faċilment ir-regoli ta' kliem Malti. Għalkemm dan il-kliem jieħu ż-żmien biex jiġi aċċettat, fil-fehma tiegħi jkun aħjar milli nis-",
-    "expected": "Ma setax jonqos ukoll li, bħal kull traduttur ieħor, niltaqa’ ma’ kliem li ma għandniex terminoloġija għalih bil-Malti. Hekk pereżempju ġrali meta ġejt biex nittraduċi l-kelma ‘snood’. Ekwivalenza bil-Malti għaliha ma sibtx. L-għażla kienet jekk noħloqx terminu bil-Malti għaliha bbażat fuq l-etimoloġija ta’ kelma barranija jew nużax il-kelma Ingliża miktuba fonetikament bil-Malti. Rajt li jekk nuża l-kelma Ingliża kien ikun hemm ftit diffikultà minħabba li l-kelma ma kienx ikollha plural li jsegwi r-regoli ta’ kliem Malti. Wara li rajt it-tifsira ta’ ‘snood’ b’lingwi differenti, iddeċidejt li niġġenera terminu bil-Malti (‘reżilju’) fuq dak Franċiż ‘résilk’ għax rajt li għall-kelma li kont se nissuġġerixxi ma kienx ħa jkun hemm diffikultà meta jkun hemm il-bżonn li jissawwar il-plural tagħha. Dan għaliex il-kelma li qed nissuġġerixxi ssegwi faċilment ir-regoli kif jissawwar il-plural ta’ kliem Malti. Inħoss li meta terminu ma jkunx jeżisti bil-Malti, it-tradutturi ma għandhomx jibżgħu joħolqu termini ġodda Maltin ibbażati fuq l-etimoloġija ta’ kelma ta’ lingwa barranija sakemm dan it-terminu jkun isegwi faċilment ir-regoli ta’ kliem Malti. Għalkemm dan il-kliem jieħu ż-żmien biex jiġi aċċettat, fil-fehma tiegħi jkun aħjar milli nis-",
-    "cer": 0.019184652278177457
-  },
-  {
     "image": "078.jpg",
     "predicted": "Min-naħa l-oħra, Xuereb jgħidilna 'ma kien ikolli qatt kuraġġ nidħol għal din il-biċċa xogħol filosofika bil-Malti f'Ir-Repubblika' ta' Platun) li kieku ma kinetx il-ħerqa li għandi li nara l-letteratura Maltija tikber u tistagħna bi traduzzjonijiet dejjem ġodda' (2008, p. xiii). Bis-saħħa ta' dawn ix-xogħlijiet il-Malti kiber u stagħna. Bl-istess mod, hu sinifikanti l-kontribut lill-Malti tal-bqija tat-tradutturi li tawna l-qlib għall-Malti ta' xogħlijiet Klassiċi.",
     "expected": "Min-naħa l-oħra, Xuereb jgħidilna “ma kien ikolli qatt kuraġġ nidħol għal din il-biċċa xogħol filosofika bil-Malti [“Ir-Repubblika” ta’ Platun] li kieku ma kinetx il-ħerqa li għandi li nara l-letteratura Maltija tikber u tistagħna bi traduzzjonijiet dejjem ġodda” (2008, p. xiii). Bis-saħħa ta’ dawn ix-xogħlijiet il-Malti kiber u stagħna. Bl-istess mod, hu sinifikanti l-kontribut lill-Malti tal-bqija tat-tradutturi li tawna l-qlib għall-Malti ta’ xogħlijiet Klassiċi.",
     "cer": 0.019148936170212766
-  },
-  {
-    "image": "353.jpg",
-    "predicted": "M Deskrizzjoni dettaljata tal-metodoloġija u r-riżultati intermedji nsibuhom fid-dokument elettroniku tal-gasamweb tal-proġett: http://www.european-agencv.org/agencv-projects/vocational-education-and-training",
-    "expected": "⁴ Deskrizzjoni dettaljata tal-metodoloġija u r-riżultati intermedji nsibuhom fid-dokument elettroniku tal-gasam-web tal-proġett: http://www.european-agency.org/agency-projects/vocational-education-and-training",
-    "cer": 0.019138755980861243
   },
   {
     "image": "065.jpg",
@@ -618,12 +594,6 @@
     "cer": 0.018439716312056736
   },
   {
-    "image": "196.jpg",
-    "predicted": "1 Żewġ saċerdoti Maltin oħra qalbu testi reliġjużi għall-Protestanti: Giovanni Falzon u Giuseppe Maurin. Fl-1926 il-British and Foreign Bible Societv (BFBS) ħarġet JI Ctieb tas-Salmi, maqlubin minn Falzon (Cachia, Jannar 2017, p. 32). Maurin ipprova jaqleb il-Vanġeli; qabel ma miet reġa' għadda fi ħdan il-Knisja Kattolika (Sant, 1979, pp. 88, 90; Cachia, Jannar 2017, pp. 30-34). —",
-    "expected": "¹ Żewġ saċerdoti Maltin oħra qalbu testi reliġjużi għall-Protestanti: Giovanni Falzon u Giuseppe Maurin. Fl-1926 il-British and Foreign Bible Society (BFBS) ħarġet Il Ctieb tas-Salmi, maqlubin minn Falzon (Cachia, Jannar 2017, p. 32). Maurin ipprova jaqleb il-Vanġeli; qabel ma miet reġa’ għadda fi ħdan il-Knisja Kattolika (Sant, 1979, pp. 88, 90; Cachia, Jannar 2017, pp. 30-34).",
-    "cer": 0.01837270341207349
-  },
-  {
     "image": "345.jpg",
     "predicted": "Kemm-il darba tkellimt dwar il-fatt li l-Ingliż sar lingwa globali. X'inhuma l-konsegwenzi tal-'globalizzazzjoni' tal-lingwa Ingliża, f'dinja fejn għal kull kelliem nattiv tal-Ingliż hemm ħamsa oħra li jitkellmuh imma li mhumiex kelliema nattivi tiegħu2 Taħseb li l-Ingliż jeħtieġ jiġi protett minn dawn il-kelliema mhux nattivi2",
     "expected": "Kemm-il darba tkellimt dwar il-fatt li l-Ingliż sar lingwa globali. X’inhuma l-konsegwenzi tal-‘globalizzazzjoni’ tal-lingwa Ingliża, f’dinja fejn għal kull kelliem nattiv tal-Ingliż hemm ħamsa oħra li jitkellmuh imma li mhumiex kelliema nattivi tiegħu? Taħseb li l-Ingliż jeħtieġ jiġi protett minn dawn il-kelliema mhux nattivi?",
@@ -640,6 +610,12 @@
     "predicted": "Norwich, B., 2019. 'From the Warnock Report (1978) to an Education Framework Commission: A Novel Contemporarv Approach to Educational Policv Making for Pupils With Special Educational Needs/Disabilities' (Mir-rapport ta' Warnock (1978) għal Kummissjoni Qafas għall-Edukazzjoni: Approċċ kontemporanju ġdid lejn it-tfassil tal-politika edukattiva għall-istudenti bi ħtiġijiet edukattivi speċjali/diżabilitajiet), Frontiers in Education, 4. doi.ore/10.3389/feduc.2019.00072 (Aċċessat l-aħħar f'Lulju 2021)",
     "expected": "Norwich, B., 2019. ‘From the Warnock Report (1978) to an Education Framework Commission: A Novel Contemporary Approach to Educational Policy Making for Pupils With Special Educational Needs/Disabilities’ [Mir-rapport ta’ Warnock (1978) għal Kummissjoni Qafas għall-Edukazzjoni: Approċċ kontemporanju ġdid lejn it-tfassil tal-politika edukattiva għall-istudenti bi ħtiġijiet edukattivi speċjali/diżabilitajiet], Frontiers in Education, 4. doi.org/10.3389/feduc.2019.00072 (Aċċessat l-aħħar f’Lulju 2021)",
     "cer": 0.017928286852589643
+  },
+  {
+    "image": "185.jpg",
+    "predicted": "L-iżvilupp ta' impenn komuni għall-edukazzjoni inklużiva",
+    "expected": "L-iżvilupp ta’ impenn komuni għall-edukazzjoni inklużiva",
+    "cer": 0.017857142857142856
   },
   {
     "image": "197.jpg",
@@ -672,14 +648,8 @@
     "cer": 0.01694915254237288
   },
   {
-    "image": "131.jpg",
-    "predicted": "6.3.3: Il-kwistjonijiet ta' privatezza, etika u mitigazzjoni tar-riskju qed jiġu indirizzati waqt il-monitoraġġ tal-kooperazzjoni tas-setturi mainstream kif ukoll speċjalizzati 7",
-    "expected": "6.3.3: Il-kwistjonijiet ta’ privatezza, etika u mitigazzjoni tar-riskju qed jiġu indirizzati waqt il-monitoraġġ tal-kooperazzjoni tas-setturi mainstream kif ukoll speċjalizzati?",
-    "cer": 0.01694915254237288
-  },
-  {
     "image": "379.jpg",
-    "predicted": "6.3.2: Il-mekkaniżmi ta' monitoraġġ u evalwazzjoni jirriflettu approċċ fuq livell ta' skola sħiħa li jiffoka fuq ostakli għal u fatturi li jiffaċilitaw l-istruzzjoni u t-tagħlim2",
+    "predicted": "6.3.2: Il-mekkaniżmi ta' monitoraġġ u evalwazzjoni jirriflettu approċċ fuq livell ta' skola sħiħa li jiffoka fuq ostakli għal u fatturi li jiffaċilitaw l-istruzzjoni u t-tagħlim7",
     "expected": "6.3.2: Il-mekkaniżmi ta’ monitoraġġ u evalwazzjoni jirriflettu approċċ fuq livell ta’ skola sħiħa li jiffoka fuq ostakli għal u fatturi li jiffaċilitaw l-istruzzjoni u t-tagħlim?",
     "cer": 0.016853932584269662
   },
@@ -712,6 +682,12 @@
     "predicted": "agencv.org/resources/publications/teacher-education-inclusion-profile-inclusive-teachers (Aċċessat l-aħħar f'Ottubru 2021)",
     "expected": "agency.org/resources/publications/teacher-education-inclusion-profile-inclusive-teachers (Aċċessat l-aħħar f’Ottubru 2021)",
     "cer": 0.01639344262295082
+  },
+  {
+    "image": "208.jpg",
+    "predicted": "F'sezzjoni 7 kienu introdotti l-oqsma, il-ħtiġijiet u l-indikaturi għal edukazzjoni kif ukoll bħala rabta ma' indikaturi speċifiċi. Is-saħħa ta' dan l-approċju tista' tiġi sottolineata, billi nispjegaw kif dan l-approċju jidħol fil-proċeduri użati fi proġetti li huma relatati ma' kontenut, li s-soltu jkun fih rakkomandazzjonijiet relatati ma' xi qasam tematiku partikolari.",
+    "expected": "F’sezzjoni 7 kienu introdotti l-oqsma, il-ħtiġijiet u l-indikaturi għal edukazzjoni kif ukoll bħala rabta ma’ indikaturi speċifiċi. Is-saħħa ta’ dan l-approċju tista’ tiġi sottolineata, billi nispjegaw kif dan l-approċju jidħol fil-proċeduri użati fi proġetti li huma relatati ma’ kontenut, li s-soltu jkun fih rakkomandazzjonijiet relatati ma’ xi qasam tematiku partikolari.",
+    "cer": 0.016
   },
   {
     "image": "260.jpg",
@@ -750,6 +726,12 @@
     "cer": 0.01488833746898263
   },
   {
+    "image": "161.jpg",
+    "predicted": "1.2.2: F'konformità mal-approċċ ibbażat fuq id-drittijiet tal-bniedem, hemm ċaqliq ċar minn approċċ mediku għal wieħed soċjopedagoġiku7",
+    "expected": "1.2.2: F’konformità mal-approċċ ibbażat fuq id-drittijiet tal-bniedem, hemm ċaqliq ċar minn approċċ mediku għal wieħed soċjopedagoġiku?",
+    "cer": 0.014814814814814815
+  },
+  {
     "image": "209.jpg",
     "predicted": "Il-pajjiżi membri kollha ta' l-Aġenzija kienu konxji mill-fatt li l-organizzazzjoni ta' avveniment ta' dan it-tip kienet sfida kbira. Dan, b'mod speċjali meta wieħed iqis li għal dan l-avveniment kienu mistennija parteċipanti minn 29 pajjiż. Fis-sena 2003 ħadu sehem 22 pajjiż.",
     "expected": "Il-pajjiżi membri kollha ta’ l-Aġenzija kienu konxji mill-fatt li l-organizzazzjoni ta’ avveniment ta’ dan it-tip kienet sfida kbira. Dan, b’mod speċjali meta wieħed iqis li għal dan l-avveniment kienu mistennija parteċipanti minn 29 pajjiż. Fis-sena 2003 ħadu sehem 22 pajjiż.",
@@ -768,6 +750,12 @@
     "cer": 0.0144
   },
   {
+    "image": "353.jpg",
+    "predicted": "M Deskrizzjoni dettaljata tal-metodoloġija u r-riżultati intermedji nsibuhom fid-dokument elettroniku tal-gasam-web tal-proġett: http://www.european-agencv.org/agencv-projects/vocational-education-and-training",
+    "expected": "⁴ Deskrizzjoni dettaljata tal-metodoloġija u r-riżultati intermedji nsibuhom fid-dokument elettroniku tal-gasam-web tal-proġett: http://www.european-agency.org/agency-projects/vocational-education-and-training",
+    "cer": 0.014354066985645933
+  },
+  {
     "image": "261.jpg",
     "predicted": "Twieled il-Belt, studja l-Liċeo u fl-Università degli Studi ta' Milan, fl-Università per Stranieri ta' Perugia, fiċ-Centro Culturale di Coordinazione Internazionale ta' Ruma u fl-Akkademja ta' Turin. Studja wkoll f'Londra biex fl-1953 ġie elett fellow tal-Istitut tal-Lingwistika ta' Londra. Fl-1953, ingħata l-Medaglia Culturale di Bronzo mill-ministru Taljan tal-affarijiet barranin u fl-1969 ingħata l-insinja ta' Cavaliere Ufficiale dell Ordine al Merito della Repubblica Italiana. Kien għalliem tat-Taljan u l-Malti l-Liċeo, għallem it-Taljan fl-MCAST u serva ta' assistant head tas-sixth form. Fl-1951 ingħata t-Trofew Inez Soler għall-aħjar plau oriġinali u fl-1977, tliet snin wara mewtu, ingħata l-Premju Letterarju ta' Malta għar-rumanz It-Tfajla bil-Fjur fuq Sidirha.",
     "expected": "Twieled il-Belt, studja l-Liċeo u fl-Università degli Studi ta’ Milan, fl-Università per Stranieri ta’ Perugia, fiċ-Centro Culturale di Coordinazione Internazionale ta’ Ruma u fl-Akkademja ta’ Turin. Studja wkoll f’Londra biex fl-1953 ġie elett fellow tal-Istitut tal-Lingwistika ta’ Londra. Fl-1953, ingħata l-Medaglia Culturale di Bronzo mill-ministru Taljan tal-affarijiet barranin u fl-1969 ingħata l-insinja ta’ Cavaliere Ufficiale dell’Ordine al Merito della Repubblica Italiana. Kien għalliem tat-Taljan u l-Malti l-Liċeo, għallem it-Taljan fl-MCAST u serva ta’ assistant head tas-sixth form. Fl-1951 ingħata t-Trofew Inez Soler għall-aħjar play oriġinali u fl-1977, tliet snin wara mewtu, ingħata l-Premju Letterarju ta’ Malta għar-rumanz It-Tfajla bil-Fjur fuq Sidirha.",
@@ -780,16 +768,16 @@
     "cer": 0.01405152224824356
   },
   {
+    "image": "052.jpg",
+    "predicted": "piċċaw bi kliem Ingliż miktub bil-Malti li ma jsegwux regoli stabbiliti fil-grammatika Malti-ja tant li jkollna noħolqu eċċezzjonijiet għali-hom.",
+    "expected": "piċċaw bi kliem Ingliż miktub bil-Malti li ma jsegwux regoli stabbiliti fil-grammatika Maltija tant li jkollna noħolqu eċċezzjonijiet għalihom.",
+    "cer": 0.013986013986013986
+  },
+  {
     "image": "262.jpg",
     "predicted": "EIPPCB European Integrated Pollution Prevention and Control Bureau (ara Uffiċċju Ewropew tal-Prevenzjoni u tal-Kontroll Integrati tat-Tniġġis)",
     "expected": "EIPPCB - European Integrated Pollution Prevention and Control Bureau (ara Uffiċċju Ewropew tal-Prevenzjoni u tal-Kontroll Integrati tat-Tniġġis)",
     "cer": 0.013888888888888888
-  },
-  {
-    "image": "008.jpg",
-    "predicted": "Basciano, B., Kula, N. 8: Melloni, C. (2011) Modes of compounding in Bantu, Romance and Chinese. Italian Journal of Linguistics 23(2)(2), 203 — 249",
-    "expected": "Basciano, B., Kula, N. & Melloni, C. (2011) Modes of compounding in Bantu, Romance and Chinese. Italian Journal of Linguistics 23(2)(2), 203 — 249",
-    "cer": 0.0136986301369863
   },
   {
     "image": "232.jpg",
@@ -798,10 +786,10 @@
     "cer": 0.0136986301369863
   },
   {
-    "image": "367.jpg",
-    "predicted": "F'din is-sezzjoni, il-mudell input-proċess-riżultat-fil-mira (inputprocess-outcome), addattat għall-qasam tal-edukazzjoni, qiegħed jiġi applikat.",
-    "expected": "F’din is-sezzjoni, il-mudell input-proċess-riżultat-fil-mira (input-process-outcome), addattat għall-qasam tal-edukazzjoni, qiegħed jiġi applikat.",
-    "cer": 0.0136986301369863
+    "image": "050.jpg",
+    "predicted": "Nittama li dan ix-xogħol ikun utli mhux biss għat-tradutturi fix-xogħol tagħhom speċjalment meta jiġu biex jittraduċu materjal li għandu x'jaqsam mas-settur tal-produzzjoni u t-trobbija tat-tjur, imma wkoll għal dawk kollha li għandhom għal qalbhom il-lingwa Maltija. Xtaqt nuri b'mod konkret li l-lingwa Maltija hija għanja f'terminoloġija teknika u allura m'hemmx il-ħtieġa li nużaw kliem bl-Ingliż. Fejn it-terminoloġija kienet teżisti diġà ġbartha minn sorsi differenti u fejn ma kinitx teżisti tajt is-suġġerimenti tiegħi. Dan il-glossarju għadu mhux ippubblikat imma kien ippreżentat biss lill-Università ta' Malta bħala parti mill-kors tiegħi għall-grad ta' MA fit-Traduzzjoni. Nix-tieq li jiġi ppubblikat għax jista' jkun ta' għaj-nuna għal ħafna. Ix-xewqa tiegħi hi li nkompli naħdem fuq xogħol simili imma f'settur diffe-renti mill-qasam tal-agrikoltura. Diġà hemm ħsieb iberren f'moħħi li sa issa għad ma kellix iċ-ċans li nibda naħdem fuqu. Jalla jirnexxili nwettaq dan il-ħsieb ħalli terminoloġija oħra f'settur differenti tal-agrikoltura tinġabar flim-kien, tintuża u allura tinfirex aktar.",
+    "expected": "Nittama li dan ix-xogħol ikun utli mhux biss għat-tradutturi fix-xogħol tagħhom speċjalment meta jiġu biex jittraduċu materjal li għandu x’jaqsam mas-settur tal-produzzjoni u t-trobbija tat-tjur, imma wkoll għal dawk kollha li għandhom għal qalbhom il-lingwa Maltija. Xtaqt nuri b’mod konkret li l-lingwa Maltija hija għanja f’terminoloġija teknika u allura m’hemmx il-ħtieġa li nużaw kliem bl-Ingliż. Fejn it-terminoloġija kienet teżisti diġà ġbartha minn sorsi differenti u fejn ma kinitx teżisti tajt is-suġġerimenti tiegħi. Dan il-glossarju għadu mhux ippubblikat imma kien ippreżentat biss lill-Università ta’ Malta bħala parti mill-kors tiegħi għall-grad ta’ MA fit-Traduzzjoni. Nixtieq li jiġi ppubblikat għax jista’ jkun ta’ għajnuna għal ħafna. Ix-xewqa tiegħi hi li nkompli naħdem fuq xogħol simili imma f’settur differenti mill-qasam tal-agrikoltura. Diġà hemm ħsieb iberren f’moħħi li sa issa għad ma kellix iċ-ċans li nibda naħdem fuqu. Jalla jirnexxili nwettaq dan il-ħsieb ħalli terminoloġija oħra f’settur differenti tal-agrikoltura tinġabar flimkien, tintuża u allura tinfirex aktar.",
+    "cer": 0.013636363636363636
   },
   {
     "image": "083.jpg",
@@ -864,6 +852,18 @@
     "cer": 0.0125
   },
   {
+    "image": "310.jpg",
+    "predicted": "N.B. Il-fehmiet espressi f'dan l-artiklu huma esklussi-vament tal-awtur u bl-ebda mod ma huma riflessjoni tad-Dipartiment tal-Malti tad-Direttorat tat-Traduzzjoni tal-Kummissjoni Ewropea. L-artiklu hu intiż għal skop ta' diskussjoni u informazzjoni.",
+    "expected": "N.B. Il-fehmiet espressi f’dan l-artiklu huma esklussivament tal-awtur u bl-ebda mod ma huma riflessjoni tad-Dipartiment tal-Malti tad-Direttorat tat-Traduzzjoni tal-Kummissjoni Ewropea. L-artiklu hu intiż għal skop ta’ diskussjoni u informazzjoni.",
+    "cer": 0.012096774193548387
+  },
+  {
+    "image": "255.jpg",
+    "predicted": "Fl-2017, rajna ppubblikat Vox Depicta, ktieb ta' proverbji Latini maqlubin għall-Malti u l-Ingliż, editjat minn Lara Zammit u Maria Zammit. Dan. il-ktieb hu frott. il-kollaborazzjoni bejn il-Malta Classics Association u l-artist lokali Warren Bartolo.",
+    "expected": "Fl-2017, rajna ppubblikat Vox Depicta, ktieb ta’ proverbji Latini maqlubin għall-Malti u l-Ingliż, editjat minn Lara Zammit u Maria Zammit. Dan il-ktieb hu frott il-kollaborazzjoni bejn il-Malta Classics Association u l-artist lokali Warren Bartolo.",
+    "cer": 0.012048192771084338
+  },
+  {
     "image": "081.jpg",
     "predicted": "L-Uffiċċju Internazzjonali għall-Edukazzjoni tal-UNESCO, 2019 Inclusive Curriculum (Kurrikulu inklużiv). Ġinevra: L-Uffiċċju Internazzjonali għall-Edukazzjoni tal-UNESCO.",
     "expected": "L-Uffiċċju Internazzjonali għall-Edukazzjoni tal-UNESCO, 2019 Inclusive Curriculum [Kurrikulu inklużiv]. Ġinevra: L-Uffiċċju Internazzjonali għall-Edukazzjoni tal-UNESCO.",
@@ -883,7 +883,7 @@
   },
   {
     "image": "024.jpg",
-    "predicted": "3) Għaliex ismijiet li loġikament għandhom isegwu l-istess mudell jinkitbu b'mod differenti, eż. it-Tanzanija / it-Tuneżija, jew Kazakstan / Kirgiżstan, Możambik / Martinigue)",
+    "predicted": "3) Għaliex ismijiet li loġikament għandhom isegwu l-istess mudell jinkitbu b'mod differenti, eż. it-Tanzanija / it-Tuneżija, jew Kazakstan / Kirgiżstan, Możambik / Martinigue'",
     "expected": "3) Għaliex ismijiet li loġikament għandhom isegwu l-istess mudell jinkitbu b'mod differenti, eż. it-Tanzanija / it-Tuneżija, jew Kazakstan / Kirgiżstan, Możambik / Martinique?",
     "cer": 0.011428571428571429
   },
@@ -898,6 +898,12 @@
     "predicted": "Wieħed mill-ostakli kulturali ewlenin u ovvji li tifella bi sfond ta' immigrant jista' jaffaċċja meta jiġi assessjat — u wieħed li ssir referenza għalih ta' sikwit fil-letteratura — huwa relatat mal-lingwa użata biex wieħed jassessja l-ħtiġijiet u l-abilitajiet tal-istudentii. Kif Landon (1999) wera permezz tal-eżempju tad-dvslexia fil-Konferenza Ewropea fuq Tfal Migranti bi Ħtiġijiet Għal Edukazzjoni Speċjali organizzata f'Copenhagen, 'hemm bżonn li nneħħu d-diffikultajiet li dawn l-istudenti jesperjenzaw qabel insibu dawk li għandhom problemi perċettivi u konoxxittivi. In-numru ta' tfal bilingwi suspettati li huma dvslexic huwa inqas minn dak tan-nies tal-post: fir-realtà, l-istudenti jkollhom diffikultajiet fil-qari imma ħadd ma jagħmel dijanjożi ċara ... L-għalliema ma jarawx il-problema għaliex huma ma jafux kif jagħmlu l-assessjar (Rapport tal-konferenza, p. 18).",
     "expected": "Wieħed mill-ostakli kulturali ewlenin u ovvji li tifel/a bi sfond ta’ immigrant jista’ jaffaċċja meta jiġi assessjat — u wieħed li ssir referenza għalih ta’ sikwit fil-letteratura — huwa relatat mal-lingwa użata biex wieħed jassessja l-ħtiġijiet u l-abilitajiet tal-istudentii. Kif Landon (1999) wera permezz tal-eżempju tad-dyslexia fil-Konferenza Ewropea fuq Tfal Migranti bi Ħtiġijiet Għal Edukazzjoni Speċjali organizzata f’Copenhagen, ‘hemm bżonn li nneħħu d-diffikultajiet li dawn l-istudenti jesperjenzaw qabel insibu dawk li għandhom problemi perċettivi u konoxxittivi. In-numru ta’ tfal bilingwi suspettati li huma dyslexic huwa inqas minn dak tan-nies tal-post: fir-realtà, l-istudenti jkollhom diffikultajiet fil-qari imma ħadd ma jagħmel dijanjożi ċara ... L-għalliema ma jarawx il-problema għaliex huma ma jafux kif jagħmlu l-assessjar’ (Rapport tal-konferenza, p. 18).",
     "cer": 0.011337868480725623
+  },
+  {
+    "image": "131.jpg",
+    "predicted": "6.3.3: Il-kwistjonijiet ta' privatezza, etika u mitigazzjoni tar-riskju qed jiġu indirizzati waqt il-monitoraġġ tal-kooperazzjoni tas-setturi mainstream kif ukoll speċjalizzati7",
+    "expected": "6.3.3: Il-kwistjonijiet ta’ privatezza, etika u mitigazzjoni tar-riskju qed jiġu indirizzati waqt il-monitoraġġ tal-kooperazzjoni tas-setturi mainstream kif ukoll speċjalizzati?",
+    "cer": 0.011299435028248588
   },
   {
     "image": "340.jpg",
@@ -934,12 +940,6 @@
     "predicted": "1) Jekk din il-lista ġiet ippreżentata biex jiġu evitati d-diżgwidi u r-riperkussjonijiet politiċi, għaliex fl-Anness Il għat-Trattat ta' Liżbena Lisbona nsibu, pereżempju, It-Territorji Franċiżi tan-Nofs-in-Nhar jew. it-Territorji Britanniċi, filwaqt li fil-lista li waslitilna nsibu t-Territorji Franċiżi tan-Nofsinhar u t-Territorji Brittanniċi2 Bl-istess mod, jekk fit-Trattat hemm Ġjorġja ta' Nofs-in-Nhar, għaliex fil-lista nsibu Ġeorġja tan-Nofsinhar2 Jekk korrezzjonijiet ortografiċi għal dak li hemm fit-Trattat huma permessi, għaliex ma nistgħux indaħħlu korrezzjonijiet ortografiċi oħra2",
     "expected": "1) Jekk din il-lista ġiet ippreżentata biex jiġu evitati d-diżgwidi u r-riperkussjonijiet politiċi, għaliex fl-Anness II għat-Trattat ta' Liżbona Lisbona nsibu, pereżempju, It-Territorji Franċiżi tan-Nofs-in-Nhar jew it-Territorji Britanniċi, filwaqt li fil-lista li waslitilna nsibu t-Territorji Franċiżi tan-Nofsinhar u t-Territorji Brittanniċi? Bl-istess mod, jekk fit-Trattat hemm Ġjorġja ta' Nofs-in-Nhar, għaliex fil-lista nsibu Ġeorġja tan-Nofsinhar? Jekk korrezzjonijiet ortografiċi għal dak li hemm fit-Trattat huma permessi, għaliex ma nistgħux indaħħlu korrezzjonijiet ortografiċi oħra?",
     "cer": 0.010050251256281407
-  },
-  {
-    "image": "050.jpg",
-    "predicted": "Nittama li dan ix-xogħol ikun utli mhux biss għat-tradutturi fix-xogħol tagħhom speċjalment meta jiġu biex jittraduċu materjal li għandu x'jaqsam mas-settur tal-produzzjoni u t-trobbija tat-tjur, imma wkoll għal dawk kollha li għandhom għal qalbhom il-lingwa Maltija. Xtaqt nuri b'mod konkret li l-lingwa Maltija hija għanja f'terminoloġija teknika u allura m'hemmx il-ħtieġa li nużaw kliem bl-Ingliż. Fejn it-terminoloġija kienet teżisti diġà ġbartha minn sorsi differenti u fejn ma kinitx teżisti tajt is-suġġerimenti tiegħi. Dan il-glossarju għadu mhux ippubblikat imma kien ippreżentat biss lill-Università ta' Malta bħala parti mill-kors tiegħi għall-grad ta' MA fit-Traduzzjoni. Nixtieq li jiġi ppubblikat għax jista' jkun ta' għajnuna għal ħafna. Ix-xewqa tiegħi hi li nkompli naħdem fuq xogħol simili imma f'settur differenti mill-qasam tal-agrikoltura. Diġà hemm ħsieb iberren f'moħħi li sa issa għad ma kellix iċ-ċans li nibda naħdem fuqu. Jalla jirnexxili nwettaq dan il-ħsieb ħalli terminoloġija oħra f'settur differenti tal-agrikoltura tinġabar flimkien, tintuża u allura tinfirex aktar.",
-    "expected": "Nittama li dan ix-xogħol ikun utli mhux biss għat-tradutturi fix-xogħol tagħhom speċjalment meta jiġu biex jittraduċu materjal li għandu x’jaqsam mas-settur tal-produzzjoni u t-trobbija tat-tjur, imma wkoll għal dawk kollha li għandhom għal qalbhom il-lingwa Maltija. Xtaqt nuri b’mod konkret li l-lingwa Maltija hija għanja f’terminoloġija teknika u allura m’hemmx il-ħtieġa li nużaw kliem bl-Ingliż. Fejn it-terminoloġija kienet teżisti diġà ġbartha minn sorsi differenti u fejn ma kinitx teżisti tajt is-suġġerimenti tiegħi. Dan il-glossarju għadu mhux ippubblikat imma kien ippreżentat biss lill-Università ta’ Malta bħala parti mill-kors tiegħi għall-grad ta’ MA fit-Traduzzjoni. Nixtieq li jiġi ppubblikat għax jista’ jkun ta’ għajnuna għal ħafna. Ix-xewqa tiegħi hi li nkompli naħdem fuq xogħol simili imma f’settur differenti mill-qasam tal-agrikoltura. Diġà hemm ħsieb iberren f’moħħi li sa issa għad ma kellix iċ-ċans li nibda naħdem fuqu. Jalla jirnexxili nwettaq dan il-ħsieb ħalli terminoloġija oħra f’settur differenti tal-agrikoltura tinġabar flimkien, tintuża u allura tinfirex aktar.",
-    "cer": 0.01
   },
   {
     "image": "223.jpg",
@@ -1026,28 +1026,10 @@
     "cer": 0.00819672131147541
   },
   {
-    "image": "310.jpg",
-    "predicted": "N.B. Il-fehmiet espressi f'dan l-artiklu huma esklussivament tal-awtur u bl-ebda mod ma huma riflessjoni tad-Dipartiment tal-Malti tad-Direttorat tat-Traduzzjoni tal-Kummissjoni Ewropea. L-artiklu hu intiż għal skop ta' diskussjoni u informazzjoni.",
-    "expected": "N.B. Il-fehmiet espressi f’dan l-artiklu huma esklussivament tal-awtur u bl-ebda mod ma huma riflessjoni tad-Dipartiment tal-Malti tad-Direttorat tat-Traduzzjoni tal-Kummissjoni Ewropea. L-artiklu hu intiż għal skop ta’ diskussjoni u informazzjoni.",
-    "cer": 0.008064516129032258
-  },
-  {
     "image": "333.jpg",
     "predicted": "Din kienet it-tieni darba li l-Aġenzija organizzat avveniment daqshekk importanti. L-ewwel Assemblea Ewropea għall-Voung People bi ħtiġijiet ta' edukazzjoni speċjali kienet ġiet organizzata fi Brussels fis-sena 2003 sewwa sew fil-Parlament Ewropew.",
     "expected": "Din kienet it-tieni darba li l-Aġenzija organizzat avveniment daqshekk importanti. L-ewwel Assemblea Ewropea għall-Young People bi ħtiġijiet ta’ edukazzjoni speċjali kienet ġiet organizzata fi Brussels fis-sena 2003 sewwa sew fil-Parlament Ewropew.",
     "cer": 0.008064516129032258
-  },
-  {
-    "image": "255.jpg",
-    "predicted": "Fl-2017, rajna ppubblikat Vox Depicta, ktieb ta' proverbji Latini maqlubin għall-Malti u l-Ingliż, editjat minn Lara Zammit u Maria Zammit. Dan. il-ktieb hu frott il-kollaborazzjoni bejn il-Malta Classics Association u l-artist lokali Warren Bartolo.",
-    "expected": "Fl-2017, rajna ppubblikat Vox Depicta, ktieb ta’ proverbji Latini maqlubin għall-Malti u l-Ingliż, editjat minn Lara Zammit u Maria Zammit. Dan il-ktieb hu frott il-kollaborazzjoni bejn il-Malta Classics Association u l-artist lokali Warren Bartolo.",
-    "cer": 0.008032128514056224
-  },
-  {
-    "image": "097.jpg",
-    "predicted": "Lusekelo, Amani (2019) Endocentric and exocentric compounds in Kiswahili, SKASE Journal of Theoretical Linguistics 16(4), 22 —47",
-    "expected": "Lusekelo, Amani (2019) Endocentric and exocentric compounds in Kiswahili, SKASE Journal of Theoretical Linguistics 16(4), 22 — 47",
-    "cer": 0.007751937984496124
   },
   {
     "image": "397.jpg",
@@ -1092,6 +1074,12 @@
     "cer": 0.007168458781362007
   },
   {
+    "image": "045.jpg",
+    "predicted": "r-Rev. Mikelanġ Camilleri (1814-1903) irreveda t-traduzzjoni għall-Malti mill-Vulgata tal-Erba' Vanġeli u l-Atti tal-Appostli ta' Mikiel Anton Vassalli u mbagħad ittraduċa l-kumplament tat-Testment il-Ġdid għall-Protestanti fl-1847. Dan hu wieħed mill-ftit qassisin Kattoliċi Maltin ribelli li għaddew għal mal-Protestanti u qalbulhom testi reliġjużi u letterarji għall-Malti.' Camilleri tgħammed is-Siġġiewi l-għada li twieled fis-6 ta' Frar 1814 iżda trabba l-Birgu fejn kienet toqgħod familtu (Cachia, 2013, p. 23). Ġie ordnat saċerdot Kattoliku fl-24 ta' Settembru 1836, sentejn wara li ħa d-dottorat fid-Divinità (Bonnici, 2000, p. 52). Hu stess jgħid li wara li sar saċerdot ħadem għal xi 18-il xahar bħala missjunarju fl-Alġerija minn fejn kellu jitlaq minħabba d-deni li qabdu li kien għoddu qatlu (Stuteville Isaacson, 1903, p. 177).",
+    "expected": "Ir-Rev. Mikelanġ Camilleri (1814-1903) irreveda t-traduzzjoni għall-Malti mill-Vulgata tal-Erba’ Vanġeli u l-Atti tal-Appostli ta’ Mikiel Anton Vassalli u mbagħad ittraduċa l-kumplament tat-Testment il-Ġdid għall-Protestanti fl-1847. Dan hu wieħed mill-ftit qassisin Kattoliċi Maltin ribelli li għaddew għal mal-Protestanti u qalbulhom testi reliġjużi u letterarji għall-Malti.¹ Camilleri tgħammed is-Siġġiewi l-għada li twieled fis-6 ta’ Frar 1814 iżda trabba l-Birgu fejn kienet toqgħod familtu (Cachia, 2013, p. 23). Ġie ordnat saċerdot Kattoliku fl-24 ta’ Settembru 1836, sentejn wara li ħa d-dottorat fid-Divinità (Bonnici, 2000, p. 52). Hu stess jgħid li wara li sar saċerdot ħadem għal xi 18-il xahar bħala missjunarju fl-Alġerija minn fejn kellu jitlaq minħabba d-deni li qabdu li kien għoddu qatlu (Stuteville Isaacson, 1903, p. 177).",
+    "cer": 0.0071174377224199285
+  },
+  {
     "image": "143.jpg",
     "predicted": "Xi wħud jinsistu li studenti bilingwi bi sfond ta' immigrant għandu jkollhom assessjar inizjali bilingwi sħiħ u/jew li dan ikun magħmul minn professjonisti li jkunu jifhmu bis-sħiħ fl-ilsien tal-istudenti u l-isfond kulturali tagħhom (Cline, 1999; Andersson, 2007; Rosenavist, 2007).",
     "expected": "Xi wħud jinsistu li studenti bilingwi bi sfond ta’ immigrant għandu jkollhom assessjar inizjali bilingwi sħiħ u/jew li dan ikun magħmul minn professjonisti li jkunu jifhmu bis-sħiħ fl-ilsien tal-istudenti u l-isfond kulturali tagħhom (Cline, 1999; Andersson, 2007; Rosenqvist, 2007).",
@@ -1099,7 +1087,7 @@
   },
   {
     "image": "177.jpg",
-    "predicted": "Cachia, Lawrenz. L-Ilsien Malti -— Il-Bieraħ u l-lum. Sensiela Kotba Soċjalisti, Maħruġ mid-Dipartiment tat-Tagħrif tal-Partit tal-Ħaddiema, 1994.",
+    "predicted": "Cachia, Lawrenz. L-Ilsien Malti — Il-Bieraħ u l-lum. Sensiela Kotba Soċjalisti, Maħruġ mid-Dipartiment tat-Tagħrif tal-Partit tal-Ħaddiema, 1994.",
     "expected": "Cachia, Lawrenz. L-Ilsien Malti - Il-Bieraħ u l-lum. Sensiela Kotba Soċjalisti, Maħruġ mid-Dipartiment tat-Tagħrif tal-Partit tal-Ħaddiema, 1994.",
     "cer": 0.006896551724137931
   },
@@ -1110,8 +1098,20 @@
     "cer": 0.006896551724137931
   },
   {
+    "image": "008.jpg",
+    "predicted": "Basciano, B., Kula, N. £ Melloni, C. (2011) Modes of compounding in Bantu, Romance and Chinese. Italian Journal of Linguistics 23(2)(2), 203 — 249",
+    "expected": "Basciano, B., Kula, N. & Melloni, C. (2011) Modes of compounding in Bantu, Romance and Chinese. Italian Journal of Linguistics 23(2)(2), 203 — 249",
+    "cer": 0.00684931506849315
+  },
+  {
+    "image": "367.jpg",
+    "predicted": "F'din is-sezzjoni, il-mudell input-proċess-riżultat-fil-mira (input-process-outcome), addattat għall-qasam tal-edukazzjoni, qiegħed jiġi applikat.",
+    "expected": "F’din is-sezzjoni, il-mudell input-proċess-riżultat-fil-mira (input-process-outcome), addattat għall-qasam tal-edukazzjoni, qiegħed jiġi applikat.",
+    "cer": 0.00684931506849315
+  },
+  {
     "image": "121.jpg",
-    "predicted": "2) X'mudelli ntużaw biex l-ismijiet jinqalbu għall-Malti2 - Għaliex xi wħud mill-ismijiet jimxu fuq il-prinċipju fonetiku u l-alfabet Malti, eż. il-Baħrejn, il-Bangladexx, Ġibuti (għal xi raġuni, mingħajr l-artiklu), filwaqt li oħrajn le, eż. il-Liechtenstein, Nauru jew tabilħaqq Saint Pierre u Miquelon7 Għaliex ċerti ismijiet jissejsu fuq l-ortografija Taljana u mhux dik Maltija, bħal fil-każ tal-Iżvizzera Isvizzera jew il-każ tal-Iżvezja Isvezja)",
+    "predicted": "2) X'mudelli ntużaw biex l-ismijiet jinqalbu għall-Malti2 - Għaliex xi wħud mill-ismijiet jimxu fuq il-prinċipju fonetiku u l-alfabet Malti, eż. il-Baħrejn, il-Bangladexx, Ġibuti (għal xi raġuni, mingħajr l-artiklu), filwaqt li oħrajn le, eż. il-Liechtenstein, Nauru jew tabilħaqq Saint Pierre u Miquelon2 Għaliex ċerti ismijiet jissejsu fuq l-ortografija Taljana u mhux dik Maltija, bħal fil-każ tal-Iżvizzera Isvizzera jew il-każ tal-Iżvezja Isvezja)",
     "expected": "2) X'mudelli ntużaw biex l-ismijiet jinqalbu għall-Malti? - Għaliex xi wħud mill-ismijiet jimxu fuq il-prinċipju fonetiku u l-alfabet Malti, eż. il-Baħrejn, il-Bangladexx, Ġibuti (għal xi raġuni, mingħajr l-artiklu), filwaqt li oħrajn le, eż. il-Liechtenstein, Nauru jew tabilħaqq Saint Pierre u Miquelon? Għaliex ċerti ismijiet jissejsu fuq l-ortografija Taljana u mhux dik Maltija, bħal fil-każ tal-Iżvizzera Isvizzera jew il-każ tal-Iżvezja Isvezja?",
     "cer": 0.00663716814159292
   },
@@ -1159,7 +1159,7 @@
   },
   {
     "image": "016.jpg",
-    "predicted": "Is-sistema — ara Figura 1 — tikkonsisti minn tliet elementi: /nput u riżorsi jindikaw l-aspetti kollha pprovduti għas-sistema biex jinkiseb ir-riżultat fil-mira. Fil-qasam tal-edukazzjoni, l-inputs u r-riżorsi jistgħu jkunu biss per eżempju, riżorsi finanzjarji, jew leġiżlazzjoni marbuta",
+    "predicted": "Is-sistema — ara Figura 1 — tikkonsisti minn tliet elementi: input u riżorsi jindikaw l-aspetti kollha pprovduti għas-sistema biex jinkiseb ir-riżultat fil-mira. Fil-qasam tal-edukazzjoni, l-inputs u r-riżorsi jistgħu jkunu biss per eżempju, riżorsi finanzjarji, jew leġiżlazzjoni marbuta",
     "expected": "Is-sistema — ara Figura 1 — tikkonsisti minn tliet elementi: Input u riżorsi jindikaw l-aspetti kollha pprovduti għas-sistema biex jinkiseb ir-riżultat fil-mira. Fil-qasam tal-edukazzjoni, l-inputs u r-riżorsi jistgħu jkunu biss per eżempju, riżorsi finanzjarji, jew leġiżlazzjoni marbuta",
     "cer": 0.003472222222222222
   },
@@ -1177,7 +1177,7 @@
   },
   {
     "image": "057.jpg",
-    "predicted": "Meta ftaħtha l-ewwel darba kont sorpriż. Mhux tant għall-fatt li l-isem tal-fajl ta' lista ta' ismijiet bil-Malti kellu jkun bl-Ingliż, u lanqas għall-fatt li l-pajjiżi jidhru fl-ordni tal-alfabet Ingliż. Kont sorpriż bil-lista għaliex mal-ewwel daqqa t'għajn diġà stajt nara li teħtieġ ix-xogħol. Dan fih innifsu mhux ħaġa ħażina, għaliex punt tat-tluq dejjem huwa aħjar mix-xejn. Imma punt tat-tluq lanqas ma huwa r-riżultat aħħari li wieħed għandu jqassam u jagħti struzzjonijiet riġidi biex jiġi segwit.",
+    "predicted": "Meta ftaħtha l-ewwel darba kont sorpriż. Mhux tant għall-fatt li l-isem tal-fajl ta' lista ta' ismijiet bil-Malti kellu jkun bl-Ingliż, u lanqas għall-fatt li l-pajjiżi jidhru fl-ordni tal-alfabet Ingliżi. Kont sorpriż bil-lista għaliex mal-ewwel daqqa t'għajn diġà stajt nara li teħtieġ ix-xogħol. Dan fih innifsu mhux ħaġa ħażina, għaliex punt tat-tluq dejjem huwa aħjar mix-xejn. Imma punt tat-tluq lanqas ma huwa r-riżultat aħħari li wieħed għandu jqassam u jagħti struzzjonijiet riġidi biex jiġi segwit.",
     "expected": "Meta ftaħtha l-ewwel darba kont sorpriż. Mhux tant għall-fatt li l-isem tal-fajl ta' lista ta' ismijiet bil-Malti kellu jkun bl-Ingliż, u lanqas għall-fatt li l-pajjiżi jidhru fl-ordni tal-alfabet Ingliż¹. Kont sorpriż bil-lista għaliex mal-ewwel daqqa t'għajn diġà stajt nara li teħtieġ ix-xogħol. Dan fih innifsu mhux ħaġa ħażina, għaliex punt tat-tluq dejjem huwa aħjar mix-xejn. Imma punt tat-tluq lanqas ma huwa r-riżultat aħħari li wieħed għandu jqassam u jagħti struzzjonijiet riġidi biex jiġi segwit.",
     "cer": 0.001968503937007874
   },
@@ -1344,12 +1344,6 @@
     "cer": 0.0
   },
   {
-    "image": "052.jpg",
-    "predicted": "piċċaw bi kliem Ingliż miktub bil-Malti li ma jsegwux regoli stabbiliti fil-grammatika Maltija tant li jkollna noħolqu eċċezzjonijiet għalihom.",
-    "expected": "piċċaw bi kliem Ingliż miktub bil-Malti li ma jsegwux regoli stabbiliti fil-grammatika Maltija tant li jkollna noħolqu eċċezzjonijiet għalihom.",
-    "cer": 0.0
-  },
-  {
     "image": "055.jpg",
     "predicted": "Black-tailed Godwit",
     "expected": "Black-tailed Godwit",
@@ -1449,6 +1443,12 @@
     "image": "092.jpg",
     "predicted": "1. Laqgħat mal-istakeholders.",
     "expected": "1. Laqgħat mal-istakeholders.",
+    "cer": 0.0
+  },
+  {
+    "image": "097.jpg",
+    "predicted": "Lusekelo, Amani (2019) Endocentric and exocentric compounds in Kiswahili, SKASE Journal of Theoretical Linguistics 16(4), 22 — 47",
+    "expected": "Lusekelo, Amani (2019) Endocentric and exocentric compounds in Kiswahili, SKASE Journal of Theoretical Linguistics 16(4), 22 — 47",
     "cer": 0.0
   },
   {
@@ -2034,12 +2034,6 @@
     "cer": 0.0
   },
   {
-    "image": "282.jpg",
-    "predicted": "Broad-billed Sandpiper",
-    "expected": "Broad-billed Sandpiper",
-    "cer": 0.0
-  },
-  {
     "image": "283.jpg",
     "predicted": "crop diversification",
     "expected": "crop diversification",
@@ -2499,6 +2493,12 @@
     "image": "416.jpg",
     "predicted": "Ħarġa 14",
     "expected": "Ħarġa 14",
+    "cer": 0.0
+  },
+  {
+    "image": "417.jpg",
+    "predicted": "Direttiva Kwadru dwar l-Istrateġija Marina, Direttiva li tistabbilixxi qafas għal azzjoni komunitarja fil-qasam tal-politika tal-ambjent marin",
+    "expected": "Direttiva Kwadru dwar l-Istrateġija Marina, Direttiva li tistabbilixxi qafas għal azzjoni komunitarja fil-qasam tal-politika tal-ambjent marin",
     "cer": 0.0
   },
   {
