@@ -1,0 +1,390 @@
+[
+  {
+    "family": "Times New Roman",
+    "style": "regular",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Times New Roman",
+    "style": "bold",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Times New Roman",
+    "style": "italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Times New Roman",
+    "style": "bold_italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Times New Roman Bold Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Georgia",
+    "style": "regular",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Georgia.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Georgia",
+    "style": "bold",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Georgia",
+    "style": "italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Georgia Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Georgia",
+    "style": "bold_italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Georgia Bold Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Palatino",
+    "style": "regular",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Palatino.ttc",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Palatino",
+    "style": "italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Palatino.ttc",
+    "index": 1,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Palatino",
+    "style": "bold",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Palatino.ttc",
+    "index": 2,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Palatino",
+    "style": "bold_italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Palatino.ttc",
+    "index": 3,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Baskerville",
+    "style": "regular",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Baskerville",
+    "style": "bold",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
+    "index": 1,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Baskerville",
+    "style": "italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
+    "index": 2,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Baskerville",
+    "style": "bold_italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
+    "index": 3,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Rockwell",
+    "style": "regular",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
+    "index": 0,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Rockwell",
+    "style": "italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
+    "index": 1,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Rockwell",
+    "style": "bold",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
+    "index": 2,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Rockwell",
+    "style": "bold_italic",
+    "category": "serif",
+    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
+    "index": 3,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Arial",
+    "style": "regular",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Arial",
+    "style": "bold",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Arial",
+    "style": "italic",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Arial Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Arial",
+    "style": "bold_italic",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Verdana",
+    "style": "regular",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Verdana.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Verdana",
+    "style": "bold",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Verdana Bold.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Verdana",
+    "style": "italic",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Verdana Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Verdana",
+    "style": "bold_italic",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Verdana Bold Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "♢"
+    ]
+  },
+  {
+    "family": "Trebuchet MS",
+    "style": "regular",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS.ttf",
+    "index": 0,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Trebuchet MS",
+    "style": "bold",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS Bold.ttf",
+    "index": 0,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Trebuchet MS",
+    "style": "italic",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Trebuchet MS",
+    "style": "bold_italic",
+    "category": "sans",
+    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS Bold Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "ỹ",
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Courier New",
+    "style": "regular",
+    "category": "mono",
+    "path": "/System/Library/Fonts/Supplemental/Courier New.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Courier New",
+    "style": "bold",
+    "category": "mono",
+    "path": "/System/Library/Fonts/Supplemental/Courier New Bold.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Courier New",
+    "style": "italic",
+    "category": "mono",
+    "path": "/System/Library/Fonts/Supplemental/Courier New Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  },
+  {
+    "family": "Courier New",
+    "style": "bold_italic",
+    "category": "mono",
+    "path": "/System/Library/Fonts/Supplemental/Courier New Bold Italic.ttf",
+    "index": 0,
+    "soft_missing": [
+      "⁴",
+      "♢"
+    ]
+  }
+]
