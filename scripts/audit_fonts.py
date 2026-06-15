@@ -50,6 +50,7 @@ _NAME_CATEGORY: dict[str, str] = {
     "pt serif": "serif",
     "gentium": "serif",
     "charis sil": "serif",
+    "charis": "serif",  # font was renamed from "Charis SIL" to "Charis" in v7
     "libertinus serif": "serif",
     "libertinus sans": "sans",
     "libertinus mono": "mono",
@@ -275,6 +276,17 @@ def main(argv: list[str] | None = None) -> None:
                 f"hard={r['hard_missing']}  maltese={r['maltese_missing']}"
             )
 
+    # ── De-duplicate by (family, style) — when a font ships as both .otf and
+    # .ttf prefer the .ttf copy; otherwise keep the first occurrence.
+    seen: dict[tuple[str, str], dict] = {}
+    for r in passed:
+        key = (r["family"], r["style"])
+        existing = seen.get(key)
+        if existing is None:
+            seen[key] = r
+        elif r["path"].endswith(".ttf") and not existing["path"].endswith(".ttf"):
+            seen[key] = r  # upgrade to .ttf
+
     # ── Write fonts_ok.json ───────────────────────────────────────────────
     fonts_ok = [
         {
@@ -285,7 +297,7 @@ def main(argv: list[str] | None = None) -> None:
             "index": r["index"],
             "soft_missing": r["soft_missing"],
         }
-        for r in passed
+        for r in seen.values()
     ]
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(fonts_ok, indent=2, ensure_ascii=False), encoding="utf-8")
