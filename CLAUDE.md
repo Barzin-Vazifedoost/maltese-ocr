@@ -6,6 +6,50 @@ Baseline: Tesseract with the official Maltese language model (`mlt.traineddata`)
 
 ---
 
+## Current Architecture
+
+The repo currently holds **two pipelines side by side** — the working submission
+at the repository root, and a new staged pipeline being built under `src/`.
+
+### Old pipeline (root-level, working submission)
+The Tesseract-based pipeline is the current competition submission and the only
+fully working path.
+
+- `competition_transcriber.py` — Tesseract (PSM 6) + ImageMagick fallback, with
+  optional fine-tuned TrOCR. Best **CER 0.0196** on the 422-image dev set.
+- `test_baseline.py`, `generate_data.py`, `train.py`, `run_colab.ipynb` —
+  evaluation, synthetic-data generation, and TrOCR fine-tuning.
+
+These files are kept until the `src/` pipeline reaches parity; do not delete them.
+
+### New staged pipeline (`src/maltese_ocr/`, in progress)
+A from-scratch rebuild that decomposes the monolith into a package and trains in
+three stages:
+
+- **T5 — SeqCLR contrastive pretraining** (`pretrain/`) — *in progress.*
+  Self-supervised pretraining of the ViT encoder on unlabelled renders.
+- **T6 — supervised fine-tune** (`train/`) — *planned.* Decoder fine-tuning on
+  labelled synthetic pairs.
+- **T7 — hard-negative mining** (`train/`) — *planned.* Refinement with mined
+  hard negatives.
+
+Built so far: `render/` (renderer + fonts, ports `generate_data.py --v2`),
+`data/corpus.py` (korpus_malti streamer + charset), and `scripts/build_dataset.py`
+(materialises `data/synthetic_v3/`).
+
+### Makefile target status
+
+| Target | Status |
+|--------|--------|
+| `make setup` / `make test` / `make test-all` | ✅ working |
+| `make render-sample` | ✅ working |
+| `make eval` (root `test_baseline.py` + `sync-vault`) | ✅ working |
+| `make sync-vault` / `make package` | ✅ working |
+| `make pretrain` (`maltese_ocr.pretrain.run`) | ⛔ stub — `run` module not yet implemented |
+| `make train` (`maltese_ocr.train.run`) | ⛔ stub — `run` module not yet implemented |
+
+---
+
 ## Git practices
 
 - One commit per logical piece; use Conventional Commits (`feat:`, `fix:`, `test:`, `docs:`, …).
