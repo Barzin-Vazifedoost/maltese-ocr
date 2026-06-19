@@ -6,6 +6,14 @@ Baseline: Tesseract with the official Maltese language model (`mlt.traineddata`)
 
 ---
 
+## Git practices
+
+- One commit per logical piece; use Conventional Commits (`feat:`, `fix:`, `test:`, `docs:`, …).
+- Run `python3 -m ruff format` and `python3 -m ruff check` before each commit.
+- **Do NOT add a `Co-Authored-By: Claude` trailer** to commit messages. The co-author line is appended automatically by the local git setup, so adding it manually duplicates it.
+
+---
+
 ## Repository layout
 
 ```
