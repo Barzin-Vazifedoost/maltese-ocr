@@ -1,9 +1,0 @@
-torch
-transformers
-pillow
-datasets
-malti
-tqdm
-jiwer
-huggingface_hub
-wand
