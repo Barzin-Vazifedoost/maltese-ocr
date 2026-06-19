@@ -1050,4 +1050,49 @@ All special Maltese characters (ħ, ġ, ċ, ż, Ħ, Ġ, Ċ, Ż) are correctly re
 
 ---
 
+## 23. Codebase Cleanup Scan — June 19, 2026
+
+A full repository audit was run to remove redundancy that had accumulated while
+the new `src/maltese_ocr/` pipeline was being built alongside the working
+root-level submission.
+
+### Audit findings (summary)
+- **Two pipelines side by side:** the working Tesseract submission at the repo
+  root and a partially-built staged pipeline under `src/` (render + data done;
+  pretrain/train/infer still stubs). The "old" files look redundant but remain
+  the only runnable path, so they were kept.
+- **Dead files:** `transcribe.py` was a `NotImplementedError` stub that nothing
+  imported; `requirements.txt` was a loose, drifting copy of the dependency list
+  already pinned in `pyproject.toml`.
+- **Duplicate data:** `data/texts.json` and `data/dev_set/texts.json` were
+  byte-identical; only `data/texts.json` is read (by `test_baseline.py`).
+- **Gitignore gaps:** ~159 MB of reproducible synthetic images
+  (`data/synthetic/`, `data/synthetic_v2/`), `models/`, and `*.egg-info/` build
+  artifacts were tracked in git.
+- **Stale branches:** `t3-renderer` (identical to `training_basic_step`),
+  `targeted-fixes` (merged into `main`), and `dedup-tesseract-fallback`
+  (identical to `main`) were all fully merged or duplicate.
+
+### Actions taken
+- **Branches deleted:** `t3-renderer` (local), `targeted-fixes` (local + origin),
+  `dedup-tesseract-fallback` (local + origin).
+- **Files removed:** `transcribe.py`, `requirements.txt`, and the duplicate
+  `data/dev_set/texts.json` (kept `data/texts.json`).
+- **`.gitignore` updated:** added `data/synthetic/`, `data/synthetic_v2/`,
+  `models/`, `*.egg-info/`, `dist/`, and `build/`.
+- **`CLAUDE.md` updated:** added a `## Current Architecture` section documenting
+  the old vs new pipelines and the working/stub status of each Makefile target.
+- **`README.md` added.**
+
+### Remaining items
+- The ~159 MB of already-committed synthetic images and `*.egg-info/` are still
+  present in git history. The new `.gitignore` rules only prevent *future*
+  tracking; actually untracking them (and optionally rewriting history to reclaim
+  the space) is deferred pending a history-rewrite discussion.
+
+### Branch state after cleanup
+Only `main` and `training_basic_step` remain (both locally and on `origin`).
+
+---
+
 *Documentation last updated: June 2026* *Competition: ACM DocEng 2026 — Maltese OCR*
