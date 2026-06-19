@@ -8,10 +8,10 @@ setup:
 	pre-commit install
 
 test:
-	pytest tests/ -v -m "not slow"
+	$(PYTHON) -m pytest tests/ -v -m "not slow"
 
 test-all:
-	pytest tests/ -v
+	$(PYTHON) -m pytest tests/ -v
 
 render-sample:
 	$(PYTHON) scripts/render_sample.py
