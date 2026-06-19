@@ -8,3 +8,15 @@ maltese-vault/
 # Generated datasets and visual-inspection samples (reproducible artifacts)
 data/synthetic_v3/
 data/samples/
+
+# Synthetic datasets (reproducible via build_dataset.py)
+data/synthetic/
+data/synthetic_v2/
+
+# Model checkpoints
+models/
+
+# Python build artifacts
+*.egg-info/
+dist/
+build/
