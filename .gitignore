@@ -4,3 +4,7 @@ __pycache__/
 
 # Obsidian vault — working notes only, not part of final submission
 maltese-vault/
+
+# Generated datasets and visual-inspection samples (reproducible artifacts)
+data/synthetic_v3/
+data/samples/
