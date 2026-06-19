@@ -1,0 +1,13 @@
+pyproject.toml
+src/maltese_ocr/__init__.py
+src/maltese_ocr.egg-info/PKG-INFO
+src/maltese_ocr.egg-info/SOURCES.txt
+src/maltese_ocr.egg-info/dependency_links.txt
+src/maltese_ocr.egg-info/requires.txt
+src/maltese_ocr.egg-info/top_level.txt
+src/maltese_ocr/data/__init__.py
+src/maltese_ocr/infer/__init__.py
+src/maltese_ocr/pretrain/__init__.py
+src/maltese_ocr/render/__init__.py
+src/maltese_ocr/train/__init__.py
+tests/test_smoke.py

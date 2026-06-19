@@ -1,0 +1,45 @@
+# Stage 3 — Hard-negative minimal-pair fine-tuning for Maltese-specific confusables.
+# Init from Stage 2 best checkpoint; dataset is synthetically constructed minimal pairs.
+stage: 3
+name: hard_negative_finetune
+
+model:
+  init_from: models/stage2/best.pt
+
+# Character pairs that share visual similarity and are OCR-confusable in Maltese.
+confusables:
+  pairs:
+    - ["ħ", "h"]
+    - ["Ħ", "H"]
+    - ["ġ", "g"]
+    - ["Ġ", "G"]
+    - ["ċ", "c"]
+    - ["Ċ", "C"]
+    - ["ż", "z"]
+    - ["Ż", "Z"]
+    - ["għ", "gh"]
+
+data:
+  # Ratio of hard-negative (minimal-pair) samples mixed into each batch.
+  hard_negative_ratio: 0.5
+  batch_size: 8
+  num_workers: 4
+
+optimizer:
+  name: adamw
+  lr: 1.0e-5
+  weight_decay: 0.01
+  warmup_steps: 50
+  epochs: 5
+
+decode:
+  num_beams: 4
+  max_new_tokens: 256
+  early_stopping: true
+
+output:
+  checkpoint_dir: models/stage3
+  save_best: true
+  best_metric: val_cer
+  # Final packaged model directory for competition submission.
+  final_model: models/trocr-maltese-v2

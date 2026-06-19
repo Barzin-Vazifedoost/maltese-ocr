@@ -1,0 +1,43 @@
+# Stage 2 — Supervised fine-tuning on synthetic data.
+# Encoder init from Stage 1 checkpoint; character-level decoder replaces RoBERTa BPE.
+# Auxiliary style-invariance contrastive loss on encoder tokens.
+stage: 2
+name: supervised_finetune
+
+model:
+  base: microsoft/trocr-base-printed
+  encoder_init: models/stage1/best_encoder.pt   # load Stage 1 weights
+
+tokenizer:
+  type: character_level
+  # closed character set — file lists all valid output chars (provided by organizers)
+  charset_file: configs/charset.txt
+
+data:
+  synthetic_dir: data/synthetic/images
+  transcriptions: data/synthetic/transcriptions.json
+  val_split: 0.1
+  batch_size: 8
+  num_workers: 4
+
+optimizer:
+  name: adamw
+  lr: 5.0e-5
+  weight_decay: 0.01
+  warmup_steps: 200
+  epochs: 10
+
+loss:
+  ce_weight: 1.0
+  contrastive_weight: 0.1     # style-invariance aux loss
+  contrastive_temperature: 0.07
+
+decode:
+  num_beams: 4
+  max_new_tokens: 256
+  early_stopping: true
+
+output:
+  checkpoint_dir: models/stage2
+  save_best: true
+  best_metric: val_cer

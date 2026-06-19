@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maltese-ocr"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "torch==2.12.0",
+    "transformers==5.12.1",
+    "datasets==5.0.0",
+    "Pillow==12.2.0",
+    "albumentations==2.0.8",
+    "opencv-python-headless==4.13.0.92",
+    "jiwer==4.0.0",
+    "PyYAML==6.0.3",
+    "fonttools==4.63.0",
+    "tqdm==4.68.2",
+    "huggingface_hub==1.19.0",
+    "accelerate==1.14.0",
+    "sentencepiece==0.2.1",
+    "malti>=0.3",
+    "wand>=0.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.1.0",
+    "ruff==0.15.17",
+    "pre-commit==4.6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: requires network / GPU, skip with -m 'not slow'"]

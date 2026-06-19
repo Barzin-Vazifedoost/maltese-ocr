@@ -1,3 +1,6 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# Obsidian vault — working notes only, not part of final submission
+maltese-vault/
