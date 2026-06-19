@@ -425,3 +425,41 @@ def render(
     ground_truth = clean_ground_truth(text)
     metadata = _metadata(config, img.size, display_lines, applied, hyphenated)
     return img, ground_truth, metadata
+
+
+def render_pair(
+    text: str,
+    config_a: RenderConfig,
+    config_b: RenderConfig,
+    *,
+    p_hyphen: float = 0.3,
+    rng: random.Random | None = None,
+) -> tuple[tuple[Image.Image, Image.Image], str, dict]:
+    """Render the same text with the same line wrapping in two configs.
+
+    The line wrapping (and hyphenation) is computed once using ``config_a`` and
+    reused verbatim for ``config_b``, guaranteeing identical horizontal layout
+    with different appearance — the contrastive pair used by SeqCLR (T5).
+
+    Returns ``((image_a, image_b), ground_truth, metadata)`` where ``metadata``
+    contains a ``config_a`` / ``config_b`` sub-dict each and the shared line
+    count.
+    """
+    rng = rng or random
+    font_a = _load_font(config_a)
+    font_b = _load_font(config_b)
+
+    display_lines, hyphenated = _build_display_lines(text, config_a, font_a, p_hyphen, rng)
+
+    img_a, applied_a = _render_from_lines(display_lines, config_a, font_a, rng)
+    img_b, applied_b = _render_from_lines(display_lines, config_b, font_b, rng)
+
+    ground_truth = clean_ground_truth(text)
+    metadata = {
+        "num_lines": len(display_lines),
+        "lines": [list(line) for line in display_lines],
+        "hyphenated": hyphenated,
+        "config_a": _metadata(config_a, img_a.size, display_lines, applied_a, hyphenated),
+        "config_b": _metadata(config_b, img_b.size, display_lines, applied_b, hyphenated),
+    }
+    return (img_a, img_b), ground_truth, metadata

@@ -8,6 +8,7 @@ from maltese_ocr.render.renderer import (
     clean_ground_truth,
     load_fonts,
     render,
+    render_pair,
 )
 
 __all__ = [
@@ -18,4 +19,5 @@ __all__ = [
     "clean_ground_truth",
     "load_fonts",
     "render",
+    "render_pair",
 ]
