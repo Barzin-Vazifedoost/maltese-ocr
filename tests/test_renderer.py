@@ -90,7 +90,7 @@ def test_render_pair_identical_line_wrapping():
 def test_all_fonts_load_without_error():
     """Every font in fonts_ok.json must render a paragraph without raising."""
     fonts = load_fonts()
-    assert len(fonts) == 76
+    assert len(fonts) == 40
 
     for font in fonts:
         config = RenderConfig(

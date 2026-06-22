@@ -1,397 +1,9 @@
 [
   {
-    "family": "Times New Roman",
-    "style": "regular",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Times New Roman.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Times New Roman",
-    "style": "bold",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Times New Roman",
-    "style": "italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Times New Roman",
-    "style": "bold_italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Times New Roman Bold Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Georgia",
-    "style": "regular",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Georgia.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Georgia",
-    "style": "bold",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Georgia Bold.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Georgia",
-    "style": "italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Georgia Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Georgia",
-    "style": "bold_italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Georgia Bold Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Palatino",
-    "style": "regular",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Palatino.ttc",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Palatino",
-    "style": "italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Palatino.ttc",
-    "index": 1,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Palatino",
-    "style": "bold",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Palatino.ttc",
-    "index": 2,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Palatino",
-    "style": "bold_italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Palatino.ttc",
-    "index": 3,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Baskerville",
-    "style": "regular",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Baskerville",
-    "style": "bold",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
-    "index": 1,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Baskerville",
-    "style": "italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
-    "index": 2,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Baskerville",
-    "style": "bold_italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Baskerville.ttc",
-    "index": 3,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Rockwell",
-    "style": "regular",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
-    "index": 0,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Rockwell",
-    "style": "italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
-    "index": 1,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Rockwell",
-    "style": "bold",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
-    "index": 2,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Rockwell",
-    "style": "bold_italic",
-    "category": "serif",
-    "path": "/System/Library/Fonts/Supplemental/Rockwell.ttc",
-    "index": 3,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Arial",
-    "style": "regular",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Arial.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Arial",
-    "style": "bold",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Arial",
-    "style": "italic",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Arial Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Arial",
-    "style": "bold_italic",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Arial Bold Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Verdana",
-    "style": "regular",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Verdana.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Verdana",
-    "style": "bold",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Verdana Bold.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Verdana",
-    "style": "italic",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Verdana Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Verdana",
-    "style": "bold_italic",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Verdana Bold Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "♢"
-    ]
-  },
-  {
-    "family": "Trebuchet MS",
-    "style": "regular",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS.ttf",
-    "index": 0,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Trebuchet MS",
-    "style": "bold",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS Bold.ttf",
-    "index": 0,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Trebuchet MS",
-    "style": "italic",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Trebuchet MS",
-    "style": "bold_italic",
-    "category": "sans",
-    "path": "/System/Library/Fonts/Supplemental/Trebuchet MS Bold Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "ỹ",
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Courier New",
-    "style": "regular",
-    "category": "mono",
-    "path": "/System/Library/Fonts/Supplemental/Courier New.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Courier New",
-    "style": "bold",
-    "category": "mono",
-    "path": "/System/Library/Fonts/Supplemental/Courier New Bold.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Courier New",
-    "style": "italic",
-    "category": "mono",
-    "path": "/System/Library/Fonts/Supplemental/Courier New Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
-    "family": "Courier New",
-    "style": "bold_italic",
-    "category": "mono",
-    "path": "/System/Library/Fonts/Supplemental/Courier New Bold Italic.ttf",
-    "index": 0,
-    "soft_missing": [
-      "⁴",
-      "♢"
-    ]
-  },
-  {
     "family": "Charis",
     "style": "bold",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-Bold.ttf",
+    "path": "fonts/Charis-Bold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -401,7 +13,7 @@
     "family": "Charis",
     "style": "bold_italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-BoldItalic.ttf",
+    "path": "fonts/Charis-BoldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -411,7 +23,7 @@
     "family": "Charis",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-Italic.ttf",
+    "path": "fonts/Charis-Italic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -421,7 +33,7 @@
     "family": "Charis Medium",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-Medium.ttf",
+    "path": "fonts/Charis-Medium.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -431,7 +43,7 @@
     "family": "Charis Medium",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-MediumItalic.ttf",
+    "path": "fonts/Charis-MediumItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -441,7 +53,7 @@
     "family": "Charis",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-Regular.ttf",
+    "path": "fonts/Charis-Regular.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -451,7 +63,7 @@
     "family": "Charis SemiBold",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-SemiBold.ttf",
+    "path": "fonts/Charis-SemiBold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -461,7 +73,7 @@
     "family": "Charis SemiBold",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Charis-SemiBoldItalic.ttf",
+    "path": "fonts/Charis-SemiBoldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -471,7 +83,7 @@
     "family": "EB Garamond",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/EBGaramond[wght].ttf",
+    "path": "fonts/EBGaramond[wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -481,7 +93,7 @@
     "family": "Gentium Book",
     "style": "bold",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-Bold.ttf",
+    "path": "fonts/GentiumBook-Bold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -491,7 +103,7 @@
     "family": "Gentium Book",
     "style": "bold_italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-BoldItalic.ttf",
+    "path": "fonts/GentiumBook-BoldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -501,7 +113,7 @@
     "family": "Gentium Book",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-Italic.ttf",
+    "path": "fonts/GentiumBook-Italic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -511,7 +123,7 @@
     "family": "Gentium Book Medium",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-Medium.ttf",
+    "path": "fonts/GentiumBook-Medium.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -521,7 +133,7 @@
     "family": "Gentium Book Medium",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-MediumItalic.ttf",
+    "path": "fonts/GentiumBook-MediumItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -531,7 +143,7 @@
     "family": "Gentium Book",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-Regular.ttf",
+    "path": "fonts/GentiumBook-Regular.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -541,7 +153,7 @@
     "family": "Gentium Book SemiBold",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-SemiBold.ttf",
+    "path": "fonts/GentiumBook-SemiBold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -551,7 +163,7 @@
     "family": "Gentium Book SemiBold",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/GentiumBook-SemiBoldItalic.ttf",
+    "path": "fonts/GentiumBook-SemiBoldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -561,7 +173,7 @@
     "family": "Lato",
     "style": "bold",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Lato-Bold.ttf",
+    "path": "fonts/Lato-Bold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -571,7 +183,7 @@
     "family": "Lato",
     "style": "bold_italic",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Lato-BoldItalic.ttf",
+    "path": "fonts/Lato-BoldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -581,7 +193,7 @@
     "family": "Lato",
     "style": "italic",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Lato-Italic.ttf",
+    "path": "fonts/Lato-Italic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -591,7 +203,7 @@
     "family": "Lato",
     "style": "regular",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Lato-Regular.ttf",
+    "path": "fonts/Lato-Regular.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -601,7 +213,7 @@
     "family": "Libertinus Math",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusMath-Regular.ttf",
+    "path": "fonts/LibertinusMath-Regular.ttf",
     "index": 0,
     "soft_missing": []
   },
@@ -609,7 +221,7 @@
     "family": "Libertinus Sans",
     "style": "bold",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSans-Bold.ttf",
+    "path": "fonts/LibertinusSans-Bold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -619,7 +231,7 @@
     "family": "Libertinus Sans",
     "style": "italic",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSans-Italic.ttf",
+    "path": "fonts/LibertinusSans-Italic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -629,7 +241,7 @@
     "family": "Libertinus Sans",
     "style": "regular",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSans-Regular.ttf",
+    "path": "fonts/LibertinusSans-Regular.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -639,7 +251,7 @@
     "family": "Libertinus Serif",
     "style": "bold",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerif-Bold.ttf",
+    "path": "fonts/LibertinusSerif-Bold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -649,7 +261,7 @@
     "family": "Libertinus Serif",
     "style": "bold_italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerif-BoldItalic.ttf",
+    "path": "fonts/LibertinusSerif-BoldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -659,7 +271,7 @@
     "family": "Libertinus Serif",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerif-Italic.ttf",
+    "path": "fonts/LibertinusSerif-Italic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -669,7 +281,7 @@
     "family": "Libertinus Serif",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerif-Regular.ttf",
+    "path": "fonts/LibertinusSerif-Regular.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -679,7 +291,7 @@
     "family": "Libertinus Serif Semibold",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerif-Semibold.ttf",
+    "path": "fonts/LibertinusSerif-Semibold.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -689,7 +301,7 @@
     "family": "Libertinus Serif Semibold Italic",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerif-SemiboldItalic.ttf",
+    "path": "fonts/LibertinusSerif-SemiboldItalic.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -699,7 +311,7 @@
     "family": "Libertinus Serif Display",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/LibertinusSerifDisplay-Regular.ttf",
+    "path": "fonts/LibertinusSerifDisplay-Regular.ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -709,7 +321,7 @@
     "family": "Merriweather Light",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Merriweather-Italic[opsz,wdth,wght].ttf",
+    "path": "fonts/Merriweather-Italic[opsz,wdth,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -719,7 +331,7 @@
     "family": "Merriweather Light",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/Merriweather[opsz,wdth,wght].ttf",
+    "path": "fonts/Merriweather[opsz,wdth,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -729,7 +341,7 @@
     "family": "Noto Sans",
     "style": "italic",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/NotoSans-Italic[wdth,wght].ttf",
+    "path": "fonts/NotoSans-Italic[wdth,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -739,7 +351,7 @@
     "family": "Noto Sans",
     "style": "regular",
     "category": "sans",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/NotoSans[wdth,wght].ttf",
+    "path": "fonts/NotoSans[wdth,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -749,7 +361,7 @@
     "family": "Noto Serif",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/NotoSerif-Italic[wdth,wght].ttf",
+    "path": "fonts/NotoSerif-Italic[wdth,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -759,7 +371,7 @@
     "family": "Noto Serif",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/NotoSerif[wdth,wght].ttf",
+    "path": "fonts/NotoSerif[wdth,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -769,7 +381,7 @@
     "family": "Source Serif 4",
     "style": "italic",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/SourceSerif4-Italic[opsz,wght].ttf",
+    "path": "fonts/SourceSerif4-Italic[opsz,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"
@@ -779,7 +391,7 @@
     "family": "Source Serif 4",
     "style": "regular",
     "category": "serif",
-    "path": "/Users/barzinvazifedoost/Development/maltese-ocr/fonts/SourceSerif4[opsz,wght].ttf",
+    "path": "fonts/SourceSerif4[opsz,wght].ttf",
     "index": 0,
     "soft_missing": [
       "♢"

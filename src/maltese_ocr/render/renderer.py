@@ -110,10 +110,20 @@ def load_fonts(path: str | Path = FONTS_OK_JSON) -> list[dict]:
     Skips any font that records hard-missing characters.  ``soft_missing``
     characters (e.g. ⁴ and ♢) are tolerated — they fall outside the core
     Maltese glyph set and rarely occur in body text.
+
+    Bundled fonts are stored with repo-relative paths (e.g. ``fonts/Charis``
+    ``-Regular.ttf``) so the catalog is portable across machines; those are
+    resolved to absolute paths here.  Already-absolute paths (e.g. macOS
+    system fonts) are returned unchanged.
     """
     with open(path, encoding="utf-8") as f:
         data = json.load(f)
-    return [font for font in data if not font.get("hard_missing")]
+    fonts = [font for font in data if not font.get("hard_missing")]
+    for font in fonts:
+        p = Path(font["path"])
+        if not p.is_absolute():
+            font["path"] = str((_REPO_ROOT / p).resolve())
+    return fonts
 
 
 def _load_font(config: RenderConfig) -> ImageFont.FreeTypeFont:
