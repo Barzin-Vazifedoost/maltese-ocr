@@ -32,6 +32,18 @@ three stages:
   tiny offline end-to-end check (2 steps, CPU). See [AGENTS.md](AGENTS.md).
 - **T6 — supervised fine-tune** (`train/`) — *planned.* Decoder fine-tuning on
   labelled synthetic pairs.
+  - **Decoder swap validated.** The char-vocab decoder swap
+    (`train/decoder_swap.py`) is correctly wired: the encoder→decoder
+    cross-attention bridge survives the swap (k/v projections `in=768 out=1024`,
+    bit-identical to base across all 12 layers), and image conditioning is
+    confirmed — encoder hidden states `(B, 577, 768)` reach the cross-attention
+    and a real-vs-zero-image counterfactual moves the logits (max |Δ| ≈ 3.94).
+    `tests/test_decoder_swap.py` proves it by overfitting a tiny batch to
+    near-zero loss.
+  - **Use LR 5e-5, not 5e-4.** The standard TrOCR fine-tune rate (5e-5) is what
+    works here. lr=5e-4 destabilises the full-model overfit and parks loss at
+    ~3.0 (it *looks* like broken wiring but isn't); at 5e-5 the de-risk overfit
+    crashes to ~1e-4 in ~500 steps.
 - **T7 — hard-negative mining** (`train/`) — *planned.* Refinement with mined
   hard negatives.
 

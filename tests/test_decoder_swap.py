@@ -39,9 +39,12 @@ SAMPLE_TEXTS = [
 ]
 
 EXPECTED_VOCAB = 120  # 117 charset chars + <pad> + <bos> + <eos>
-OVERFIT_STEPS = 200
+OVERFIT_STEPS = 500
 LOSS_THRESHOLD = 0.05
-LEARNING_RATE = 5e-4
+# 5e-5 is the project's standard TrOCR fine-tune rate.  lr=5e-4 destabilises the
+# full-model overfit (loss parks at ~3.0); at 5e-5 the swap drives loss to ~0,
+# which is the whole point of this de-risk gate.  See the T6 note in CLAUDE.md.
+LEARNING_RATE = 5e-5
 
 
 def _image_processor(base: str = DEFAULT_BASE):
