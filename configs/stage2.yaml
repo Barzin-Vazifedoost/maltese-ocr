@@ -1,43 +1,65 @@
-# Stage 2 — Supervised fine-tuning on synthetic data.
-# Encoder init from Stage 1 checkpoint; character-level decoder replaces RoBERTa BPE.
-# Auxiliary style-invariance contrastive loss on encoder tokens.
-stage: 2
-name: supervised_finetune
+# Stage 2 — Supervised fine-tune of the char-vocab TrOCR decoder (T6).
+#
+# Starts from microsoft/trocr-base-printed, swaps the BPE decoder vocab for the
+# 120-token Maltese char vocab (train/decoder_swap.py, already validated), and
+# fine-tunes on synthetic (image, joined-paragraph) pairs rendered on the fly.
+# The encoder is frozen for the first `freeze_pct` of steps (decoder warmup),
+# then unfrozen with a differential LR (encoder_lr = decoder_lr / encoder_lr_divisor).
+#
+# LR is 5e-5 — the standard TrOCR fine-tune rate. 5e-4 destabilises the overfit
+# and floors at unigram entropy (~3.0); see the T6 note in CLAUDE.md.
 
 model:
   base: microsoft/trocr-base-printed
-  encoder_init: models/stage1/best_encoder.pt   # load Stage 1 weights
-
-tokenizer:
-  type: character_level
-  # closed character set — file lists all valid output chars (provided by organizers)
+  # Optional Stage-1 (T5 SeqCLR) pretrained encoder state_dict. null => stock
+  # trocr-base-printed encoder. Override at the CLI with --encoder-checkpoint.
+  encoder_checkpoint: null
   charset_file: configs/charset.txt
 
 data:
-  synthetic_dir: data/synthetic/images
-  transcriptions: data/synthetic/transcriptions.json
-  val_split: 0.1
+  # Streamed from MLRS/korpus_malti when HuggingFace is authenticated, otherwise
+  # falls back to corpus_fallback with a logged warning.
+  min_chars: 10
+  max_chars: 500
+  corpus_fallback: data/texts.json
+  corpus_limit: 50000
   batch_size: 8
   num_workers: 4
+  max_target_len: 512   # skip paragraphs whose tokenised length exceeds this
 
-optimizer:
-  name: adamw
-  lr: 5.0e-5
+training:
+  decoder_lr: 5.0e-5
+  encoder_lr_divisor: 8       # encoder LR = decoder_lr / 8 after unfreeze
+  freeze_pct: 0.2             # freeze encoder for the first 20% of steps
+  unfreeze_warmup_steps: 100  # short LR warmup after unfreeze (fresh optimizer)
   weight_decay: 0.01
-  warmup_steps: 200
-  epochs: 10
-
-loss:
-  ce_weight: 1.0
-  contrastive_weight: 0.1     # style-invariance aux loss
-  contrastive_temperature: 0.07
+  warmup_steps: 200           # linear warmup (optimizer steps) for the frozen phase
+  total_steps: 20000
+  grad_accumulation: 1
+  precision: bf16
+  seed: 42
+  label_smoothing: 0.0        # research: eps=0 is best for greedy/beam CER
 
 decode:
-  num_beams: 4
-  max_new_tokens: 256
-  early_stopping: true
+  num_beams: 2
+  repetition_penalty: 1.2
+  no_repeat_ngram_size: 3
+  # ~2x the longest expected paragraph (max_chars=500) so long lines aren't cut.
+  max_new_tokens: 1024
 
-output:
-  checkpoint_dir: models/stage2
-  save_best: true
-  best_metric: val_cer
+eval:
+  dev_dir: data/dev_set
+  dev_labels: data/texts.json
+  eval_every: 1000
+  eval_batch_size: 16
+  max_images: null            # null => all 422 dev images
+
+checkpointing:
+  save_dir: models/stage2
+  save_every_n_steps: 1000
+  keep_last_n: 3
+
+logging:
+  log_every_n_steps: 50
+
+target_cer: 0.0196            # current Tesseract best; the bar to beat
