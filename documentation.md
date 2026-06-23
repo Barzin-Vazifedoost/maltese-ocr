@@ -1095,4 +1095,56 @@ Only `main` and `training_basic_step` remain (both locally and on `origin`).
 
 ---
 
+## T6 unattended run
+
+The Stage 2 supervised fine-tune (T6) runs unattended on the cluster via Slurm.
+The batch script is `scripts/train_t6.sbatch`; it runs the stock
+`trocr-base-printed` encoder (no Stage-1 T5 checkpoint) on the full
+`MLRS/korpus_malti` corpus using the real-run values in `configs/stage2.yaml`
+(40 000 steps, warmup 2 000, eval every 2 000 steps over all 422 dev images,
+batch size 32 at bf16, encoder frozen for the first 20 % of steps,
+checkpoint every 2 000 steps keeping the last 3, best-by-dev-CER exported to
+`models/stage2/best`).
+
+The script sources conda and activates the `ocr` env, `cd`s to
+`~/ocr/maltese-ocr`, prints a reproducibility banner (start time, hostname,
+Slurm job id, git commit, `nvidia-smi`), then launches the fine-tune. It relies
+on the already-cached HuggingFace login and the conda env — **no token is
+hardcoded**. Each eval logs the current dev CER next to the Tesseract baseline
+(`target_cer: 0.0196`), e.g.
+`step 8000  dev_cer 0.0312 vs Tesseract baseline 0.0196  (+0.0116, above baseline)`.
+
+### Submit
+
+```bash
+sbatch scripts/train_t6.sbatch
+```
+
+This prints `Submitted batch job <jobid>`. The job also emails
+`bkassaie@uwaterloo.ca` on BEGIN / END / FAIL.
+
+### Watch
+
+```bash
+squeue -u bkassaie                 # queue / running state
+tail -f logs/t6_<jobid>.out        # live training log (loss, eval CER, checkpoints)
+tail -f logs/t6_<jobid>.err        # stderr (warnings, tracebacks)
+```
+
+(`logs/` is created ahead of time; the `.out`/`.err` files are git-ignored.)
+
+### Cancel
+
+```bash
+scancel <jobid>
+```
+
+### If it OOMs
+
+The 46 GB L40S should hold batch size 32 at bf16. If the log shows a CUDA
+out-of-memory error, lower `data.batch_size` in `configs/stage2.yaml` to 16
+(then 8 if needed) and resubmit.
+
+---
+
 *Documentation last updated: June 2026* *Competition: ACM DocEng 2026 — Maltese OCR*
