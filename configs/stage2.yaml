@@ -44,8 +44,9 @@ decode:
   num_beams: 2
   repetition_penalty: 1.2
   no_repeat_ngram_size: 3
-  # ~2x the longest expected paragraph (max_chars=500) so long lines aren't cut.
-  max_new_tokens: 1024
+  # Headroom over the longest expected paragraph, but the TrOCR decoder has a hard
+  # 512-position limit; the loop clamps this to (max_position_embeddings - 1).
+  max_new_tokens: 512
 
 eval:
   dev_dir: data/dev_set

@@ -346,6 +346,10 @@ class FineTuneTrainer:
         self.processor = TrOCRProcessor.from_pretrained(base)
         self.vocab_size = self.tokenizer.vocab_size
         self.pad_id = self.tokenizer.pad_token_id
+        # The TrOCR decoder has a fixed positional-embedding table; generating past
+        # it triggers an out-of-bounds CUDA assert (an untrained model never emits
+        # <eos>), so eval clamps max_new_tokens to fit within it.
+        self.decoder_max_pos = int(self.model.config.decoder.max_position_embeddings)
 
         # --- optional T5 SeqCLR encoder -------------------------------------
         enc_ckpt = m.get("encoder_checkpoint")
@@ -500,11 +504,15 @@ class FineTuneTrainer:
         if self.eval_max_images:
             items = items[: int(self.eval_max_images)]
 
+        # Clamp to the decoder's positional limit (leave room for the start token).
+        max_new_tokens = min(
+            int(self.decode_cfg.get("max_new_tokens", 256)), self.decoder_max_pos - 1
+        )
         gen_kwargs = dict(
             num_beams=int(self.decode_cfg.get("num_beams", 2)),
             repetition_penalty=float(self.decode_cfg.get("repetition_penalty", 1.0)),
             no_repeat_ngram_size=int(self.decode_cfg.get("no_repeat_ngram_size", 0)),
-            max_new_tokens=int(self.decode_cfg.get("max_new_tokens", 256)),
+            max_new_tokens=max_new_tokens,
         )
         refs, hyps = [], []
         for start in range(0, len(items), self.eval_batch_size):
