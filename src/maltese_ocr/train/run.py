@@ -546,6 +546,7 @@ class FineTuneTrainer:
         data_iter = iter(self.loader)
         losses: list[float] = []
         last_cer: float | None = None
+        last_eval_step = -1
         while self.step < target:
             if not self.unfrozen and self.step >= self.freeze_steps:
                 self._unfreeze()
@@ -591,11 +592,14 @@ class FineTuneTrainer:
                 )
             if self.eval_every > 0 and self.step % self.eval_every == 0:
                 last_cer = self._eval_and_track()
+                last_eval_step = self.step
             if self.save_every > 0 and self.step % self.save_every == 0:
                 self.save()
 
-        # Final eval + checkpoint so a run always ends with a measured CER.
-        last_cer = self._eval_and_track()
+        # Final eval + checkpoint so a run always ends with a measured CER, unless
+        # the last step already coincided with a periodic eval.
+        if last_eval_step != self.step:
+            last_cer = self._eval_and_track()
         self.save()
         return {
             "final_step": self.step,
