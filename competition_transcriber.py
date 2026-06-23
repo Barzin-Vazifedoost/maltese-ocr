@@ -1,7 +1,7 @@
 # competition_transcriber.py — OCR transcriber for the Maltese text competition.
 #
 # Inference order (as of Phase 5 / Section 17 refactor):
-#   1. Tesseract (PSM 6)        — our best-performing model, CER 0.0221
+#   1. Tesseract (PSM 6)        — our best-performing model, CER 0.0196
 #      - If Tesseract returns < 3 characters, apply ImageMagick preprocessing
 #        (upscale, grayscale, contrast, adaptive threshold) and retry.
 #   2. TrOCR fallback           — used ONLY when Tesseract returns < 3 chars
@@ -9,7 +9,7 @@
 #                                  model exists at models/trocr-maltese/.
 #
 # Why Tesseract first?
-#   During evaluation Tesseract (PSM 6) achieved CER 0.0221, which is better
+#   During evaluation Tesseract (PSM 6) achieved CER 0.0196, which is better
 #   than our 5-epoch TrOCR fine-tune.  TrOCR also suffered from repetition
 #   loops on some images.  Using TrOCR only as a last-resort fallback keeps
 #   the high-quality Tesseract output for almost all images.

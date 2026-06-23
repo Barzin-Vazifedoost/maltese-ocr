@@ -22,7 +22,7 @@ maltese-ocr/
 ├── src/maltese_ocr/             # New staged pipeline (in development)
 │   ├── render/                  # Synthetic image renderer (T3 ✅)
 │   ├── data/                    # Corpus streamer (T3 ✅)
-│   ├── pretrain/                # SeqCLR pretraining (T5 🔄)
+│   ├── pretrain/                # SeqCLR pretraining (T5 ✅)
 │   ├── train/                   # Supervised fine-tuning (T6 ⏳)
 │   └── infer/                   # Submission interface (T8 ⏳)
 ├── scripts/                     # Dataset generation, font audit, packaging
@@ -77,9 +77,10 @@ python3 test_baseline.py
 | `make test-all` | ✅ Working | Run all tests including slow |
 | `make render-sample` | ✅ Working | Generate 20 sample images |
 | `make eval` | ✅ Working | Run CER evaluation |
-| `make pretrain` | ⏳ Stub | T5 SeqCLR (not yet implemented) |
-| `make train` | ⏳ Stub | T6 fine-tuning (not yet implemented) |
-| `make package` | ⏳ Stub | T8 packaging (not yet implemented) |
+| `make pretrain` | ✅ Working | T5 SeqCLR Stage 1 (needs base model; GPU for full runs) |
+| `make pretrain-smoke` | ✅ Working | 2-step CPU/offline end-to-end check of the pretrain loop |
+| `make train` | ⏳ Stub | T6 fine-tuning (`train/run.py` not yet implemented) |
+| `make package` | ⏳ Blocked | `scripts/package_model.py` is implemented but needs a Stage 3 checkpoint (`make train`) |
 
 ## Competition Rules
 - Model must be published on HuggingFace
