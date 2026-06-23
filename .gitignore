@@ -20,3 +20,8 @@ models/
 *.egg-info/
 dist/
 build/
+
+# Local, project-confined dev environment (torch/transformers for GPU de-risk)
+.conda-env/
+.conda-pkgs/
+.venv/

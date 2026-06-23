@@ -26,10 +26,24 @@ These files are kept until the `src/` pipeline reaches parity; do not delete the
 A from-scratch rebuild that decomposes the monolith into a package and trains in
 three stages:
 
-- **T5 — SeqCLR contrastive pretraining** (`pretrain/`) — *in progress.*
+- **T5 — SeqCLR contrastive pretraining** (`pretrain/`) — *implemented.*
   Self-supervised pretraining of the ViT encoder on unlabelled renders.
+  `make pretrain` runs `maltese_ocr.pretrain.run`; `make pretrain-smoke` runs a
+  tiny offline end-to-end check (2 steps, CPU). See [AGENTS.md](AGENTS.md).
 - **T6 — supervised fine-tune** (`train/`) — *planned.* Decoder fine-tuning on
   labelled synthetic pairs.
+  - **Decoder swap validated.** The char-vocab decoder swap
+    (`train/decoder_swap.py`) is correctly wired: the encoder→decoder
+    cross-attention bridge survives the swap (k/v projections `in=768 out=1024`,
+    bit-identical to base across all 12 layers), and image conditioning is
+    confirmed — encoder hidden states `(B, 577, 768)` reach the cross-attention
+    and a real-vs-zero-image counterfactual moves the logits (max |Δ| ≈ 3.94).
+    `tests/test_decoder_swap.py` proves it by overfitting a tiny batch to
+    near-zero loss.
+  - **Use LR 5e-5, not 5e-4.** The standard TrOCR fine-tune rate (5e-5) is what
+    works here. lr=5e-4 destabilises the full-model overfit and parks loss at
+    ~3.0 (it *looks* like broken wiring but isn't); at 5e-5 the de-risk overfit
+    crashes to ~1e-4 in ~500 steps.
 - **T7 — hard-negative mining** (`train/`) — *planned.* Refinement with mined
   hard negatives.
 
@@ -44,9 +58,11 @@ Built so far: `render/` (renderer + fonts, ports `generate_data.py --v2`),
 | `make setup` / `make test` / `make test-all` | ✅ working |
 | `make render-sample` | ✅ working |
 | `make eval` (root `test_baseline.py` + `sync-vault`) | ✅ working |
-| `make sync-vault` / `make package` | ✅ working |
-| `make pretrain` (`maltese_ocr.pretrain.run`) | ⛔ stub — `run` module not yet implemented |
-| `make train` (`maltese_ocr.train.run`) | ⛔ stub — `run` module not yet implemented |
+| `make sync-vault` | ✅ working |
+| `make package` | ⏳ implemented but blocked — needs a Stage 3 checkpoint (`make train`) |
+| `make pretrain` (`maltese_ocr.pretrain.run`) | ✅ working — Stage 1 SeqCLR loop (needs base model; GPU for full runs) |
+| `make pretrain-smoke` (`configs/stage1_smoke.yaml`) | ✅ working — 2-step CPU/offline end-to-end check |
+| `make train` (`maltese_ocr.train.run`) | ⛔ stub — `train/run.py` not yet implemented |
 
 ---
 
@@ -89,7 +105,8 @@ maltese-ocr/
 | Tesseract PSM 3 (original baseline) | 0.036 | Default Tesseract mode |
 | Tesseract PSM 6 | 0.0237 | Single block mode — matched organizers' 0.023 |
 | + ImageMagick preprocessing fallback (2× at <150 px) | 0.0225 | Fallback for empty-output images |
-| + 3× upscale at <200 px (**current best**, `targeted-fixes` branch) | **0.0221** | Stronger upscaling in fallback path |
+| + 3× upscale at <200 px (`targeted-fixes` branch) | 0.0221 | Stronger upscaling in fallback path |
+| + targeted digit→em-dash post-process (**current best**) | **0.0196** | `_postprocess`: narrow `1-Ippjanata` → `1 — Ippjanata` rule (see Phase 5) |
 
 ---
 
@@ -212,10 +229,13 @@ PSM 3 uses full auto layout detection which fails on narrow or small images.
 - **ImageMagick preprocessing fallback** (3× upscale at <200 px): CER 0.0237 → 0.0221
   - Only triggers on images where Tesseract returns < 3 chars
   - 102.jpg: CER 1.000 → 0.354 with 3× upscaling (was 0.523 with 2× at <150 px)
+- **Targeted digit→em-dash post-process** (`_postprocess`): CER 0.0221 → **0.0196** (current best)
+  - Narrow rule only: `digit-Capital` with no surrounding spaces (`1-Ippjanata` → `1 — Ippjanata`)
+  - Distinct from the broad rule below, which regressed and was reverted
 
 ### What did NOT work (tried and reverted)
 - **2% border crop**: CER jumped from 0.0225 → 0.0348. Competition images have text flush to the edge; cropping removed real characters.
-- **Digit → em-dash replacement** (`203-249` → `203—249`): Made 12 images worse. Maltese academic texts use real hyphens in index ranges and ISBNs; the ground truth has hyphens, not em dashes.
+- **Digit → em-dash replacement (broad rule)** (`203-249` → `203—249`): Made 12 images worse. Maltese academic texts use real hyphens in index ranges and ISBNs; the ground truth has hyphens, not em dashes. (A *narrow* targeted variant was later kept — see "What worked" above.)
 - **Leading lowercase char removal** (`f word` → `word`): Only helped 1 image (225.jpg), harmed 0, but not worth keeping given the narrow scope.
 - **`fix_hyphenated_words=True`**: No measurable effect vs `False` on this dataset.
 
@@ -227,7 +247,7 @@ Loads `data/texts.json` (422 entries), runs `.transcribe()` on each image, compu
 - CER without preprocessing fallback vs with
 - Side-by-side comparison for the 7 previously-blank images with `[IMPROVED/SAME/WORSE]` tags
 
-**Current best CER: 0.0221** (Tesseract PSM 6 + ImageMagick fallback with 3× upscale, `targeted-fixes` branch)
+**Current best CER: 0.0196** (Tesseract PSM 6 + ImageMagick fallback with 3× upscale + targeted digit→em-dash `_postprocess`, `targeted-fixes` branch). This is the mean CER over all 422 dev images in `results.json`.
 
 ---
 
@@ -278,7 +298,7 @@ python3 test_baseline.py
 |--------|-------|
 | Dev set images | 422 |
 | Original Tesseract baseline CER | 0.036 |
-| Current best CER | **0.0221** |
+| Current best CER | **0.0196** |
 | Organizers' reference CER | 0.023 |
 | Synthetic training images | 5000 |
 | TrOCR fine-tune epochs (CUDA/Colab) | 5 |
@@ -315,7 +335,8 @@ python3 test_baseline.py
 | Tesseract PSM 3 (original baseline) | 0.036 | — |
 | Tesseract PSM 6 | 0.0237 | −0.0123 |
 | + ImageMagick fallback (2× upscale at <150 px) | 0.0225 | −0.0012 |
-| + 3× upscale at <200 px (`targeted-fixes` branch) | **0.0221** | −0.0004 |
+| + 3× upscale at <200 px (`targeted-fixes` branch) | 0.0221 | −0.0004 |
+| + targeted digit→em-dash post-process (`_postprocess`) | **0.0196** | −0.0025 |
 
 ### What was tried
 
@@ -324,19 +345,26 @@ Cropped 2% from each edge before passing to Tesseract, intending to remove borde
 Result: CER jumped from 0.0225 → **0.0348** (+0.0123 regression).
 Why it failed: Competition images regularly have text printed flush to the edge. A 2% crop on a 210 px-wide image removes ~4 px — enough to cut off the leading character of a word. Reverted.
 
-**2. Digit → em-dash replacement** (post-processing regex, now removed)
+**2. Digit → em-dash replacement, broad rule** (post-processing regex, reverted)
 Replaced any `digit-digit` pattern with an em dash, e.g. `203-249` → `203—249`.
 Result: Made **12 images worse**, 0 better. Net CER increase.
 Why it failed: Maltese academic texts use ordinary hyphens in index page ranges (`16(29-31)`) and ISBNs (`978-87-92387-48-6`). The ground truth has hyphens, not em dashes. Reverted.
+A *narrow* variant — only `digit-Capital` with no surrounding spaces — was later kept (item 5).
 
 **3. Leading lowercase character removal** (post-processing regex, now removed)
 Stripped a single lowercase letter at the start of output, e.g. `f Kelma` → `Kelma`.
 Result: Helped 1 image (225.jpg), harmed 0. Not worth keeping given the minimal scope. Reverted.
 
-**4. 3× upscale at <200 px** (kept — current implementation)
+**4. 3× upscale at <200 px** (kept)
 Changed the ImageMagick preprocessing fallback from 2× at <150 px to 3× at <200 px.
 Only triggers when Tesseract returns fewer than 3 characters on the raw image.
 Result: CER 0.0225 → **0.0221**.
+
+**5. Targeted digit→em-dash post-process** (`_postprocess`, kept — current implementation)
+Narrow rule: a `digit-Capital` token with no surrounding spaces (e.g. `1-Ippjanata`)
+becomes `digit — Capital` (`1 — Ippjanata`). Unlike the broad rule (item 2) it leaves
+page ranges and ISBNs untouched.
+Result: CER 0.0221 → **0.0196**.
 
 ### Per-image impact: 102.jpg
 

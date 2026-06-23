@@ -1,34 +1,34 @@
 # Stage 1 — SeqCLR contrastive pretraining of the ViT encoder (no labels).
-# Only the encoder is trained; the decoder is frozen/unused.
-stage: 1
-name: seqclr_pretrain
-
+# Self-supervised: two independently-styled renders of the same paragraph
+# (identical horizontal wrapping) form a positive pair; the encoder learns
+# frame-level representations via a window-pooled NT-Xent loss.
 model:
   base: microsoft/trocr-base-printed
-  encoder_only: true          # decoder weights not used in this stage
-
+  n_windows: 8
+  proj_dim: 128
+  proj_hidden: 512
 data:
-  synthetic_dir: data/synthetic/images
-  batch_size: 32
-  num_workers: 4
-
-augmentation:
-  views_per_sample: 2         # two distorted crops per image for contrastive pairs
-  # view pipeline: random crop → resize → colour jitter → blur → noise
-
-optimizer:
-  name: adamw
-  lr: 1.0e-4
-  weight_decay: 0.01
-  warmup_steps: 500
-  epochs: 20
-
-contrastive:
-  loss: seqclr                # SeqCLR operates on per-position encoder tokens
+  min_chars: 10
+  max_chars: 500
+  corpus_fallback: data/texts.json
+training:
+  batch_size: 64
+  learning_rate: 1e-4
+  warmup_steps: 1000
+  total_steps: 100000
+  grad_accumulation: 1
+  precision: bf16
+  seed: 42
+loss:
   temperature: 0.07
-  projection_dim: 256
-
-output:
-  checkpoint_dir: models/stage1
-  save_every_n_epochs: 5
-  best_metric: val_loss
+checkpointing:
+  save_dir: models/stage1
+  save_every_n_steps: 5000
+  keep_last_n: 3
+logging:
+  wandb: false
+  log_every_n_steps: 100
+linear_probe:
+  enabled: true
+  n_samples: 10000
+  epochs: 1

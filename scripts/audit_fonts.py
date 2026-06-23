@@ -69,6 +69,20 @@ _NAME_CATEGORY: dict[str, str] = {
 }
 
 
+def _portable_path(path_str: str) -> str:
+    """Repo-relative path for fonts under REPO_ROOT, else the absolute path.
+
+    Bundled fonts live in fonts/ and travel with the checkout, so storing them
+    relative keeps fonts_ok.json portable across machines.  macOS system fonts
+    sit outside the repo and stay absolute.
+    """
+    p = Path(path_str).resolve()
+    try:
+        return str(p.relative_to(REPO_ROOT))
+    except ValueError:
+        return path_str
+
+
 def load_charset(path: Path) -> list[str]:
     chars = []
     for line in path.read_text(encoding="utf-8").splitlines():
@@ -288,12 +302,15 @@ def main(argv: list[str] | None = None) -> None:
             seen[key] = r  # upgrade to .ttf
 
     # ── Write fonts_ok.json ───────────────────────────────────────────────
+    # Store paths inside the repo (bundled fonts/) as repo-relative so the
+    # catalog is portable across machines; keep external paths (e.g. macOS
+    # system fonts) absolute.  load_fonts() resolves the relative ones back.
     fonts_ok = [
         {
             "family": r["family"],
             "style": r["style"],
             "category": r["category"],
-            "path": r["path"],
+            "path": _portable_path(r["path"]),
             "index": r["index"],
             "soft_missing": r["soft_missing"],
         }

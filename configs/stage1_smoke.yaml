@@ -1,0 +1,47 @@
+# Stage 1 SMOKE — a tiny end-to-end check of the real SeqCLR loop.
+#
+# Purpose: give an agent (or human) a fast green/red signal that the whole
+# pretrain wiring works — config load, corpus, render_pair, DataLoader, encoder
+# forward, NT-Xent loss, optimizer step, checkpoint save — WITHOUT a GPU, an HF
+# login, or network access.
+#
+#   make pretrain-smoke
+#   # equivalently:
+#   HF_HUB_OFFLINE=1 python -m maltese_ocr.pretrain.run \
+#       --config configs/stage1_smoke.yaml --max-steps 2
+#
+# Notes:
+#   * Needs the base model (microsoft/trocr-base-printed) in the HF cache once;
+#     after that it runs fully offline.
+#   * No HF token required: build_corpus() falls back to data/texts.json.
+#   * Tiny batch + fp32 keep it CPU-friendly (seconds, not minutes).
+#   * --max-steps 2 < total_steps, so the run is "truncated" and skips the probe.
+#   * Writes throwaway checkpoints to models/stage1_smoke/ (gitignored).
+model:
+  base: microsoft/trocr-base-printed
+  n_windows: 8
+  proj_dim: 64
+  proj_hidden: 128
+data:
+  min_chars: 10
+  max_chars: 200
+  corpus_fallback: data/texts.json
+training:
+  batch_size: 2
+  learning_rate: 1e-4
+  warmup_steps: 1
+  total_steps: 100
+  grad_accumulation: 1
+  precision: fp32
+  seed: 42
+loss:
+  temperature: 0.07
+checkpointing:
+  save_dir: models/stage1_smoke
+  save_every_n_steps: 0
+  keep_last_n: 1
+logging:
+  wandb: false
+  log_every_n_steps: 1
+linear_probe:
+  enabled: false
