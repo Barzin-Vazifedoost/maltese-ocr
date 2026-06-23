@@ -16,6 +16,10 @@ data/synthetic_v2/
 # Model checkpoints
 models/
 
+# Slurm job logs (the logs/ dir itself is kept via logs/.gitkeep)
+logs/*.out
+logs/*.err
+
 # Python build artifacts
 *.egg-info/
 dist/

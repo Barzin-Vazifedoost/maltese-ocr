@@ -334,6 +334,10 @@ class FineTuneTrainer:
         self.save_every = int(ck["save_every_n_steps"])
         self.keep_last_n = int(ck.get("keep_last_n", 3))
         self.log_every = int(config.get("logging", {}).get("log_every_n_steps", 50))
+        # Tesseract baseline to beat; logged alongside every dev CER (null => skip).
+        self.target_cer = config.get("target_cer")
+        if self.target_cer is not None:
+            self.target_cer = float(self.target_cer)
 
         self.device = torch.device(device or ("cuda" if torch.cuda.is_available() else "cpu"))
         self.use_bf16 = self.device.type == "cuda" and self.precision == "bf16"
@@ -534,6 +538,17 @@ class FineTuneTrainer:
     def _eval_and_track(self) -> float:
         cer = self.evaluate()
         logger.info("step %d  dev_cer %.4f  (best %.4f)", self.step, cer, min(cer, self.best_cer))
+        if self.target_cer is not None:
+            delta = cer - self.target_cer
+            verdict = "BEATS baseline" if delta < 0 else "above baseline"
+            logger.info(
+                "step %d  dev_cer %.4f vs Tesseract baseline %.4f  (%+.4f, %s)",
+                self.step,
+                cer,
+                self.target_cer,
+                delta,
+                verdict,
+            )
         if cer < self.best_cer:
             self.best_cer = cer
             self.save_best(cer)
